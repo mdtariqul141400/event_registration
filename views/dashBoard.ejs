@@ -51,11 +51,7 @@
           aria-hidden="true"
           id="iconSidenav"
         ></i>
-        <a
-          class="navbar-brand m-0"
-          href=" https://demos.creative-tim.com/material-dashboard/pages/dashboard "
-          target="_blank"
-        >
+        <a class="navbar-brand m-0" href="#" target="_blank">
           <img
             src="/assets/img/logo-ct.png"
             class="navbar-brand-img h-100"
@@ -68,10 +64,7 @@
       <div class="collapse navbar-collapse w-auto" id="sidenav-collapse-main">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a
-              class="nav-link text-white active bg-gradient-primary"
-              href="/pages/dashboard.html"
-            >
+            <a class="nav-link text-white active bg-gradient-primary" href="#">
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -81,57 +74,58 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white" href="/pages/tables.html">
+            <a class="nav-link text-white" href="/setting">
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
-                <i class="material-icons opacity-10">table_view</i>
+                <i class="material-icons opacity-10">settings</i>
               </div>
-              <span class="nav-link-text ms-1">Tables</span>
+              <span class="nav-link-text ms-1">settings</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/pages/billing.html">
-              <div
-                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="material-icons opacity-10">receipt_long</i>
-              </div>
-              <span class="nav-link-text ms-1">Billing</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="/pages/virtual-reality.html">
-              <div
-                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="material-icons opacity-10">view_in_ar</i>
-              </div>
-              <span class="nav-link-text ms-1">Virtual Reality</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="../pages/rtl.html">
-              <div
-                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="material-icons opacity-10"
-                  >format_textdirection_r_to_l</i
+
+          <!-- <li class="nav-item">
+                <a class="nav-link text-white" href="/pages/billing.html">
+                <div
+                    class="text-white text-center me-2 d-flex align-items-center justify-content-center"
                 >
-              </div>
-              <span class="nav-link-text ms-1">RTL</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link text-white" href="../pages/notifications.html">
-              <div
-                class="text-white text-center me-2 d-flex align-items-center justify-content-center"
-              >
-                <i class="material-icons opacity-10">notifications</i>
-              </div>
-              <span class="nav-link-text ms-1">Notifications</span>
-            </a>
-          </li>
+                    <i class="material-icons opacity-10">receipt_long</i>
+                </div>
+                <span class="nav-link-text ms-1">Billing</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="/pages/virtual-reality.html">
+                <div
+                    class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+                >
+                    <i class="material-icons opacity-10">view_in_ar</i>
+                </div>
+                <span class="nav-link-text ms-1">Virtual Reality</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="../pages/rtl.html">
+                <div
+                    class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+                >
+                    <i class="material-icons opacity-10"
+                    >format_textdirection_r_to_l</i
+                    >
+                </div>
+                <span class="nav-link-text ms-1">RTL</span>
+                </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-white" href="../pages/notifications.html">
+                <div
+                    class="text-white text-center me-2 d-flex align-items-center justify-content-center"
+                >
+                    <i class="material-icons opacity-10">notifications</i>
+                </div>
+                <span class="nav-link-text ms-1">Notifications</span>
+                </a>
+            </li> -->
           <li class="nav-item mt-3">
             <h6
               class="ps-4 ms-2 text-uppercase text-xs text-white font-weight-bolder opacity-8"
@@ -305,7 +299,7 @@
                       class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3"
                     >
                       <h6 class="text-white text-capitalize ps-3">
-                        Users table
+                        recent Users
                       </h6>
                     </div>
                   </div>
@@ -338,35 +332,43 @@
                           </tr>
                         </thead>
                         <tbody>
+                          <% user.map((e)=>{ %>
                           <tr>
                             <td>
                               <div class="d-flex px-2 py-1">
                                 <div>
                                   <img
-                                    src="../assets/img/team-2.jpg"
+                                    src="/upload/userimg/<%=e.photo%>"
                                     class="avatar avatar-sm me-3 border-radius-lg"
                                     alt="user1"
+                                    style="object-fit: cover"
                                   />
                                 </div>
                                 <div
                                   class="d-flex flex-column justify-content-center"
                                 >
-                                  <h6 class="mb-0 text-sm">Nahid Hasan</h6>
+                                  <h6 class="mb-0 text-sm"><%=e.name %></h6>
                                 </div>
                               </div>
                             </td>
                             <td>
                               <p class="text-xs font-weight-bold mb-0">
-                                1741213345
+                                <%=e.phone%>
                               </p>
                               <!-- <p class="text-xs text-secondary mb-0">
-                                Organization
-                              </p> -->
+                                  Organization
+                                </p> -->
                             </td>
                             <td class="align-middle text-center text-sm">
+                              <% if(e.status){ %>
                               <span class="badge badge-sm bg-gradient-success"
                                 >Paid</span
                               >
+                              <%}else{ %>
+                              <span class="badge badge-sm bg-gradient-secondary"
+                                >Unpaid</span
+                              >
+                              <%} %>
                             </td>
                             <td class="align-middle text-center">
                               <span
@@ -385,94 +387,7 @@
                               </a>
                             </td>
                           </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <img
-                                    src="../assets/img/team-3.jpg"
-                                    class="avatar avatar-sm me-3 border-radius-lg"
-                                    alt="user2"
-                                  />
-                                </div>
-                                <div
-                                  class="d-flex flex-column justify-content-center"
-                                >
-                                  <h6 class="mb-0 text-sm">Alexa Liras</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0">
-                                0124579863
-                              </p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                              <span class="badge badge-sm bg-gradient-secondary"
-                                >Unpaid</span
-                              >
-                            </td>
-                            <td class="align-middle text-center">
-                              <span
-                                class="text-secondary text-xs font-weight-bold"
-                                >11/01/19</span
-                              >
-                            </td>
-                            <td class="align-middle">
-                              <a
-                                href="javascript:;"
-                                class="text-secondary font-weight-bold text-xs"
-                                data-toggle="tooltip"
-                                data-original-title="Edit user"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
-                          <tr>
-                            <td>
-                              <div class="d-flex px-2 py-1">
-                                <div>
-                                  <img
-                                    src="../assets/img/team-4.jpg"
-                                    class="avatar avatar-sm me-3 border-radius-lg"
-                                    alt="user3"
-                                  />
-                                </div>
-                                <div
-                                  class="d-flex flex-column justify-content-center"
-                                >
-                                  <h6 class="mb-0 text-sm">Laurent Perrier</h6>
-                                </div>
-                              </div>
-                            </td>
-                            <td>
-                              <p class="text-xs font-weight-bold mb-0">
-                                0423418841
-                              </p>
-                            </td>
-                            <td class="align-middle text-center text-sm">
-                              <span class="badge badge-sm bg-gradient-success"
-                                >PAID</span
-                              >
-                            </td>
-                            <td class="align-middle text-center">
-                              <span
-                                class="text-secondary text-xs font-weight-bold"
-                                >19/09/17</span
-                              >
-                            </td>
-                            <td class="align-middle">
-                              <a
-                                href="javascript:;"
-                                class="text-secondary font-weight-bold text-xs"
-                                data-toggle="tooltip"
-                                data-original-title="Edit user"
-                              >
-                                Edit
-                              </a>
-                            </td>
-                          </tr>
+                          <% })%>
                         </tbody>
                       </table>
                     </div>

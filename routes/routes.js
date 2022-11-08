@@ -1,4 +1,6 @@
 const userCon = require("../controller/userCon");
+// import controler 
+const DashbordCon = require("../controller/dashbordCon");
 
 const route = require('express').Router();
 route.get('/',(req,res)=>{
@@ -8,9 +10,11 @@ route.get('/',(req,res)=>{
 route.get('/singin',(req,res)=>{
     res.render("login")
 })
-route.get('/dashbord',(req,res)=>{
-    res.render("dashBoard")
+route.get('/setting',(req,res)=>{
+    res.render("settings")
 })
+
+route.get('/dashbord',DashbordCon().get);
 route.post("/registration",userCon().upload.single("photo"),userCon().add)
 
 
