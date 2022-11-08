@@ -1,0 +1,96 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Carter+One&family=Fredoka+One&display=swap");
+
+// font-family: 'Baloo 2', cursive;
+// font-family: 'Carter One', cursive;
+// font-family: 'Fredoka One', cursive;
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  font-family: "Baloo 2", cursive;
+  header {
+    width: 100%;
+    min-height: 100vh;
+    background: linear-gradient(25deg, #d60000, #220004 50%),
+      url("../img/baner.jpg");
+    background-position: center;
+    background-size: cover;
+    background-blend-mode: multiply;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    h1 {
+      font-size: 40px;
+      font-family: "Carter One", cursive;
+    }
+    p {
+      font-size: 20px;
+      font-family: "Fredoka One", cursive;
+    }
+    // display: none;
+  }
+  .main {
+    width: 100%;
+    padding: 50px 0;
+    position: relative;
+    background-image: radial-gradient(
+      circle 860px at 11.8% 33.5%,
+      rgba(240, 30, 92, 1) 0%,
+      rgba(244, 49, 74, 1) 30.5%,
+      rgba(249, 75, 37, 1) 56.1%,
+      rgba(250, 88, 19, 1) 75.6%,
+      rgba(253, 102, 2, 1) 100.2%
+    );
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .con {
+      padding: 30px;
+      background: #fff;
+      border-radius: 10px;
+      text-align: center;
+      position: relative;
+      &::after {
+        width: 1000px;
+        min-height: 3000px;
+        background-color: rgba(240, 30, 92, 1);
+        transform: rotate(20deg);
+        z-index: 100;
+      }
+      h1 {
+        text-transform: capitalize;
+        font-family: "Carter One", cursive;
+        padding-bottom: 20px;
+      }
+      button {
+        font-size: 20px;
+        padding: 5px 10px;
+        font-weight: 600;
+        text-transform: capitalize;
+        margin-top: 20px;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+.inpg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 5px 0;
+  input,
+  select {
+    font-size: 20px;
+    padding: 2px;
+  }
+}

@@ -1,0 +1,81 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Carter+One&family=Fredoka+One&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  width: 100%;
+  position: relative;
+  font-family: "Baloo 2", cursive;
+}
+body header {
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(25deg, #d60000, #220004 50%), url("../img/baner.jpg");
+  background-position: center;
+  background-size: cover;
+  background-blend-mode: multiply;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+body header h1 {
+  font-size: 40px;
+  font-family: "Carter One", cursive;
+}
+body header p {
+  font-size: 20px;
+  font-family: "Fredoka One", cursive;
+}
+body .main {
+  width: 100%;
+  padding: 50px 0;
+  position: relative;
+  background-image: radial-gradient(circle 860px at 11.8% 33.5%, rgb(240, 30, 92) 0%, rgb(244, 49, 74) 30.5%, rgb(249, 75, 37) 56.1%, rgb(250, 88, 19) 75.6%, rgb(253, 102, 2) 100.2%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+body .main .con {
+  padding: 30px;
+  background: #fff;
+  border-radius: 10px;
+  text-align: center;
+  position: relative;
+}
+body .main .con::after {
+  width: 1000px;
+  min-height: 3000px;
+  background-color: rgb(240, 30, 92);
+  transform: rotate(20deg);
+  z-index: 100;
+}
+body .main .con h1 {
+  text-transform: capitalize;
+  font-family: "Carter One", cursive;
+  padding-bottom: 20px;
+}
+body .main .con button {
+  font-size: 20px;
+  padding: 5px 10px;
+  font-weight: 600;
+  text-transform: capitalize;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+.inpg {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin: 5px 0;
+}
+.inpg input,
+.inpg select {
+  font-size: 20px;
+  padding: 2px;
+}/*# sourceMappingURL=style.css.map */

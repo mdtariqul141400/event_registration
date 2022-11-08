@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <h1>Wellcome to DICT contest</h1>
+      <p>register now</p>
+    </header>
+    <div class="main" id="main">
+      <div class="con">
+        <h1>register for the Event</h1>
+        <form
+          action="/registration"
+          method="post"
+          enctype="multipart/form-data"
+        >
+          <div class="inpg">
+            <span>photo:</span>
+            <input type="file" name="photo" id="" />
+          </div>
+          <div class="inpg">
+            <span>name:</span>
+            <input type="text" name="name" id="" />
+          </div>
+          <div class="inpg">
+            <span>phone:</span>
+            <input type="text" name="phone" id="" />
+          </div>
+          <div class="inpg">
+            <span>address:</span>
+            <input type="text" name="address" id="" />
+          </div>
+          <div class="inpg">
+            <span>t-shirt size:</span>
+            <select name="Tshirt" id="">
+              <option value="">chouse size</option>
+              <option value="XL">XL</option>
+              <option value="X">X</option>
+              <option value="M">M</option>
+              <option value="s">s</option>
+            </select>
+          </div>
+          <div class="inpg">
+            <span>blood group:</span>
+            <select name="BG" id="">
+              <option value="">chouse</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="b+">b+</option>
+              <option value="b-">b-</option>
+              <option value="o+">o+</option>
+              <option value="o-">o-</option>
+            </select>
+          </div>
+          <div class="inpg">
+            <span>Registration for:</span>
+            <select name="regfor" id="">
+              <option value="Self">Self</option>
+              <option value="for Friends">for Friends</option>
+            </select>
+          </div>
+          <button type="submit">submit</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
