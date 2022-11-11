@@ -31,7 +31,6 @@ const UserSchema = new mongoose.Schema({
   },
   photo:{
     type: String,
-    required: [true, 'Please specify the photo url course.'],
   },
   regfor:{
     type: String,

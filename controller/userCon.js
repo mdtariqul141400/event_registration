@@ -28,7 +28,7 @@ const userCon = ()=>{
                     phone:data.phone,
                     dress:data.Tshirt,
                     regfor:data.regfor,
-                    photo:req.file.filename,
+                    photo:req.file? req.file.filename:"nophoto.png",
                     BG:data.BG
                 })
                 const resdb = await load.save()

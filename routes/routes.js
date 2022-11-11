@@ -3,9 +3,17 @@ const userCon = require("../controller/userCon");
 const DashbordCon = require("../controller/dashbordCon");
 //settting cont
 const ArtCon = require("../controller/ArtCon")
+
+
+// routing start heare ------>
+
 const route = require('express').Router();
 route.get('/',(req,res)=>{
     res.render("form")
+});
+
+route.get("/paycon",(req,res)=>{
+    res.render("payset")
 })
 
 route.get('/singin',(req,res)=>{
@@ -13,7 +21,7 @@ route.get('/singin',(req,res)=>{
 })
 route.get('/setting',ArtCon().getpage)
 
-route.get('/dashbord',DashbordCon().get);
+route.get('/dashboard',DashbordCon().get);
 route.post("/registration",userCon().upload.single("photo"),userCon().add)
 
 
