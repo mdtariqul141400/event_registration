@@ -1,12 +1,16 @@
 const mongoose = require('mongoose');
 const Payment = new mongoose.Schema({
+  name: {
+    type: String,
+    default:"payment"
+  },
   ID: {
     type: String,
-    required: [true, 'Please provide a user .'],
+    default:"no store ID"
   },
   pass: {
     type: String,
-    required: [true, 'Please provide a name for this course.'],
+    default:"no store password"
   },
   live: {
     type: Boolean,
@@ -15,6 +19,10 @@ const Payment = new mongoose.Schema({
   status: {
     type: Boolean,
     default:false
+  },
+  amount:{
+    type:Number,
+    default:0
   },
 },{ timestamps: true })
 

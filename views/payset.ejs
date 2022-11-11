@@ -99,7 +99,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link text-white active bg-gradient-primary" href="/#">
+            <a class="nav-link text-white active bg-gradient-primary" href="#">
               <div
                 class="text-white text-center me-2 d-flex align-items-center justify-content-center"
               >
@@ -218,6 +218,22 @@
       </nav>
       <!-- End Navbar -->
       <div class="container-fluid py-4">
+        <% if(err) {%>
+        <div
+          class="alert alert-primary alert-dismissible text-white"
+          role="alert"
+        >
+          <span class="text-sm"><%= err %></span>
+          <button
+            type="button"
+            class="btn-close text-lg py-3 opacity-10"
+            data-bs-dismiss="alert"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <% }%>
         <div class="row">
           <div class="col-12">
             <div class="card my-4">
@@ -227,7 +243,9 @@
                 <div
                   class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3"
                 >
-                  <h6 class="text-white text-capitalize ps-3">payment setup</h6>
+                  <h6 class="text-white text-capitalize ps-3">
+                    Payment Gateway Setup
+                  </h6>
                 </div>
               </div>
               <div class="card-body px-0 pb-2">
@@ -243,28 +261,35 @@
                             >
                               <h6 class="mb-0 text-sm">Store ID</h6>
                               <p class="text-xs text-secondary mb-0">
-                                nahid4162387gf3
+                                <%= data.ID %>
                               </p>
                             </div>
                           </div>
                         </td>
                         <td></td>
-                        <td class="align-middle text-center">
-                          <div class="input-group input-group-outline">
-                            <label class="form-label">update id</label>
-                            <input type="text" class="form-control" />
-                          </div>
-                        </td>
-                        <td class="align-middle">
-                          <a
-                            href="javascript:;"
-                            class="text-secondary font-weight-bold text-xs"
-                            data-toggle="tooltip"
-                            data-original-title="Edit user"
-                          >
-                            Update
-                          </a>
-                        </td>
+                        <form action="/update/storeid" method="post">
+                          <td class="align-middle text-center">
+                            <div class="input-group input-group-outline">
+                              <label class="form-label">update id</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="id"
+                                required
+                              />
+                            </div>
+                          </td>
+                          <td class="align-middle">
+                            <button
+                              type="submit"
+                              class="btn btn-outline-primary btn-sm mb-0 me-3"
+                              data-toggle="tooltip"
+                              data-original-title="Edit user"
+                            >
+                              Update
+                            </button>
+                          </td>
+                        </form>
                         <td class="align-middle text-center text-sm"></td>
                       </tr>
                       <tr>
@@ -276,28 +301,77 @@
                             >
                               <h6 class="mb-0 text-sm">Store password</h6>
                               <p class="text-xs text-secondary mb-0">
-                                nahid4162387gf3@ssl
+                                <%= data.pass %>
                               </p>
                             </div>
                           </div>
                         </td>
                         <td></td>
-                        <td class="align-middle text-center">
-                          <div class="input-group input-group-outline">
-                            <label class="form-label">update password</label>
-                            <input type="text" class="form-control" />
+                        <form action="/update/storepass" method="post">
+                          <td class="align-middle text-center">
+                            <div class="input-group input-group-outline">
+                              <label class="form-label">update password</label>
+                              <input
+                                type="text"
+                                class="form-control"
+                                name="pass"
+                                required
+                              />
+                            </div>
+                          </td>
+                          <td class="align-middle">
+                            <button
+                              type="submit"
+                              class="btn btn-outline-primary btn-sm mb-0 me-3"
+                              data-toggle="tooltip"
+                              data-original-title="Edit user"
+                            >
+                              Update
+                            </button>
+                          </td>
+                        </form>
+                        <td class="align-middle text-center text-sm"></td>
+                      </tr>
+                      <tr>
+                        <td>
+                          <div class="d-flex px-2 py-1">
+                            <div></div>
+                            <div
+                              class="d-flex flex-column justify-content-center"
+                            >
+                              <h6 class="mb-0 text-sm">Amount</h6>
+                              <p class="text-xs text-secondary mb-0">
+                                <%= data.amount %> TK
+                              </p>
+                            </div>
                           </div>
                         </td>
-                        <td class="align-middle">
-                          <a
-                            href="javascript:;"
-                            class="text-secondary font-weight-bold text-xs"
-                            data-toggle="tooltip"
-                            data-original-title="Edit user"
-                          >
-                            Update
-                          </a>
-                        </td>
+                        <td></td>
+                        <form action="/update/payamount" method="post">
+                          <td class="align-middle text-center">
+                            <div class="input-group input-group-outline">
+                              <label class="form-label"
+                                >update amount(BDT)</label
+                              >
+                              <input
+                                type="number"
+                                class="form-control"
+                                name="amount"
+                                required
+                              />
+                            </div>
+                          </td>
+                          <td class="align-middle">
+                            <button
+                              type="submit"
+                              class="btn btn-outline-primary btn-sm mb-0 me-3"
+                              data-toggle="tooltip"
+                              data-original-title="Edit user"
+                            >
+                              Update
+                            </button>
+                          </td>
+                        </form>
                         <td class="align-middle text-center text-sm"></td>
                       </tr>
                       <tr>
@@ -313,11 +387,13 @@
                         </td>
                         <td>
                           <p class="text-xs font-weight-bold mb-0">MODE</p>
-                          <p class="text-xs text-secondary mb-0">sandbox</p>
+                          <p class="text-xs text-secondary mb-0">
+                            <%= data.live?"LIVE":"sandbox" %>
+                          </p>
                         </td>
                         <td>
                           <a
-                            href="javascript:;"
+                            href="/upldate/live"
                             class="badge badge-sm bg-gradient-success"
                             data-toggle="tooltip"
                             data-original-title="Edit user"
@@ -327,11 +403,13 @@
                         </td>
                         <td>
                           <p class="text-xs font-weight-bold mb-0">STATUS</p>
-                          <p class="text-xs text-secondary mb-0">Active</p>
+                          <p class="text-xs text-secondary mb-0">
+                            <%= data.status?"Active":"Deactive" %>
+                          </p>
                         </td>
                         <td>
                           <a
-                            href="javascript:;"
+                            href="/upldate/status"
                             class="badge badge-sm bg-gradient-success"
                             data-toggle="tooltip"
                             data-original-title="Edit user"
