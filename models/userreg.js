@@ -10,10 +10,9 @@ const UserSchema = new mongoose.Schema({
     required: [true, 'Please provide a name for this course.'],
     maxlength: [150, 'Name cannot be more than 150 characters']
   },
-  status: {
-    type: Boolean,
+  Payment: {
+    type: Object,
     required: [true, 'Please specify the status of your course.'],
-    default:false,
   },
   phone:{
     type: String,

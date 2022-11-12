@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <title>card</title>
+  </head>
+  <body>
+    <div class="main-card">
+      <div class="head"><button onclick="print()">print document</button></div>
+      <div class="print_con">
+        <div class="print-document">
+          <div class="bg-img">
+            <img src="./img/cardbg.jpg" alt="" />
+          </div>
+          <!-- // logo -->
+          <div class="logo">
+            <img src="./img/logo.png" alt="" />
+          </div>
+          <!-- // event logo -->
+          <div class="elogo">
+            <img src="./img/eventArt.png" alt="" />
+          </div>
+          <!-- developer info -->
+          <div class="develop">
+            <span>Developed by Dewan ICT,DDCOM</span>
+          </div>
+          <div class="sill">
+            <img src="./img/logo-Seal.png" alt="" />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script>
+      const print = () => {
+        let doc = document.querySelector(".print_con").innerHTML;
+        let a = window.open("", "", "height=677, width=510");
+        a.document.write(
+          `<head><style>
+            @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Carter+One&family=Fredoka+One&display=swap");
+.con{
+  position: relative;
+  width: 2480px;
+}
+ .print-document {
+  width: 500px;
+  height: 667px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.438);
+  background-image: url("./img/nahid-bg.jpg");
+  background-size: 100% 100%;
+}
+ .print-document .imgcon {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 100px;
+}
+.print-document .imgcon img {
+  height: 200px;
+  width: 200px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 50%;
+  box-shadow: 2px 2px 4px rgba(255, 0, 0, 0.452), -2px -2px 4px rgba(0, 0, 0, 0.493);
+}
+ .print-document .des {
+  position: relative;
+  top: 100px;
+  text-align: center;
+}
+ .print-document .des h1 {
+  text-transform: capitalize;
+  font-family: "Carter One", cursive;
+  font-size: 40px;
+  color: rgb(36, 36, 36);
+}
+ .print-document .des h3 {
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: rgb(75, 66, 66);
+}
+ .print-document .f {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+}</style></head>`
+        );
+        a.document.write(`<div class="con">`);
+        a.document.write(doc);
+        a.document.write(`</div">`);
+        a.document.close();
+        a.print();
+      };
+    </script> -->
+  </body>
+</html>

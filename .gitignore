@@ -2,4 +2,3 @@ node_module
 node_modules
 .env
 .ENV
-ui

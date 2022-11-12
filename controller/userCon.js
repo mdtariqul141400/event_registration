@@ -16,7 +16,7 @@ var storage = multer.diskStorage({
 
 const userCon = ()=>{
     return {
-        add: async (req,res)=>{
+        add: async (req,res,next)=>{
             const data = req.body;
             try {
                 const lastData = await User.find().sort({_id:-1}).limit(1);
@@ -29,10 +29,13 @@ const userCon = ()=>{
                     dress:data.Tshirt,
                     regfor:data.regfor,
                     photo:req.file? req.file.filename:"nophoto.png",
-                    BG:data.BG
+                    BG:data.BG,
+                    Payment:{
+                        status:false
+                    }
                 })
                 const resdb = await load.save()
-                res.send("ok")
+                next()
             } catch (error) {
                 await fs.unlinkSync(path.resolve(__dirname + "/../public/upload/userimg/"+req.file.filename))
                 console.log(error)

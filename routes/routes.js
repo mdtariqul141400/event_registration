@@ -21,7 +21,7 @@ route.post("/update/storepass",PaymentCon().upSpass)
 route.post("/update/payamount",PaymentCon().upPamount)
 route.get("/upldate/live",PaymentCon().uplive)
 route.get("/upldate/status",PaymentCon().upStatus)
-route.post("/registration",PaymentCon().gopayment)
+// route.post("/registration",)
 
 route.get('/singin',(req,res)=>{
     res.render("login")
@@ -29,7 +29,7 @@ route.get('/singin',(req,res)=>{
 route.get('/setting',ArtCon().getpage)
 
 route.get('/dashboard',DashbordCon().get);
-// route.post("/registration",userCon().upload.single("photo"),userCon().add)
+route.post("/registration",userCon().upload.single("photo"),userCon().add,PaymentCon().gopayment)
 
 
 module.exports = route;
