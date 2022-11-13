@@ -10,7 +10,7 @@ const Emitter = require('events');
 const multer = require("multer");
 
 // database connection 
-mongoose.connect("mongodb://localhost:27017/event", { useUnifiedTopology: true, useNewUrlParser: true }).then((result) => {
+mongoose.connect("mongodb://127.0.0.1:27017/event", { useUnifiedTopology: true, useNewUrlParser: true }).then((result) => {
     console.log('db connected');
 }).catch((err) => {
     console.log(err)
