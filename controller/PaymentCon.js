@@ -100,6 +100,7 @@ const PaymentCon = ()=>{
         },
         gopayment: async (req,res)=>{
             try {
+                console.log(req.headers.origin)
                 const datadb = await Payment.findOne({name:"payment"});
                 if(!datadb.status){
                     return res.send("gatway off")
@@ -108,16 +109,16 @@ const PaymentCon = ()=>{
                 const data = {
                     total_amount: datadb.amount,
                     currency: 'BDT',
-                    tran_id: tr_id, // use unique tran_id for each api call
-                    success_url: 'http://localhost:3300/success',
-                    fail_url: 'http://localhost:3300/fail',
-                    cancel_url: 'http://localhost:3300/ss',
-                    ipn_url: 'http://localhost:3300/ipn',
-                    shipping_method: 'Courier',
+                    tran_id: req.user.regNo, // use unique tran_id for each api call
+                    success_url: req.headers.origin+'/success',
+                    fail_url: req.headers.origin+'/fail',
+                    cancel_url: req.headers.origin+'/ss',
+                    ipn_url:req.headers.origin+'/ipn',
+                    shipping_method: 'Online',
                     product_name: 'Event_Packg.',
                     product_category: 'Service',
                     product_profile: 'general',
-                    cus_name: 'Customer Name',
+                    cus_name: req.user.name,
                     cus_email: 'customer@example.com',
                     cus_add1: 'Dhaka',
                     cus_add2: 'Dhaka',
@@ -127,7 +128,7 @@ const PaymentCon = ()=>{
                     cus_country: 'Bangladesh',
                     cus_phone: '01711111111',
                     cus_fax: '01711111111',
-                    ship_name: 'Customer Name',
+                    ship_name: "Online",
                     ship_add1: 'Dhaka',
                     ship_add2: 'Dhaka',
                     ship_city: 'Dhaka',
@@ -143,11 +144,11 @@ const PaymentCon = ()=>{
                     console.log('Redirecting to: ', GatewayPageURL)
                 });
             } catch (error) {
-                
+                console.log(error)
             }
                
                 
-            }
+            },
         }
 }
 

@@ -5,6 +5,8 @@ const DashbordCon = require("../controller/dashbordCon");
 const ArtCon = require("../controller/ArtCon")
 //payment controler 
 const PaymentCon = require("../controller/PaymentCon")
+//card controler 
+const CardCon = require("../controller/cardCon")
 
 
 // routing start heare ------>
@@ -30,6 +32,15 @@ route.get('/setting',ArtCon().getpage)
 
 route.get('/dashboard',DashbordCon().get);
 route.post("/registration",userCon().upload.single("photo"),userCon().add,PaymentCon().gopayment)
+// card 
+route.get("/card/:id",CardCon().getcard);
+route.post("/success",userCon().sucsses);
+//art controler
+route.post("/uploadlogo",ArtCon().upload.single("logo"),ArtCon().uploadLogo);
+route.post("/uploadSill",ArtCon().upload.single("logo"),ArtCon().uploadSill);
+route.post("/uploadeart",ArtCon().upload.single("logo"),ArtCon().uploadEart);
+route.post("/uploadbg",ArtCon().upload.single("logo"),ArtCon().uploadBG);
+route.post("/uploadfr",ArtCon().upload.single("logo"),ArtCon().uploadfr);
 
 
 module.exports = route;

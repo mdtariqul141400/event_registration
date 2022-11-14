@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../style/style.css" />
+    <!-- //h2c  -->
+    <script src="/assets/html2canvas.min.js"></script>
+    <title>card</title>
+  </head>
+  <body>
+    <div class="main-card">
+      <div class="head"><button onclick="shot()">Download card</button></div>
+      <div class="print_con">
+        <div class="print-document">
+          <!-- // logo -->
+          <div class="logo">
+            <img src="/upload/art/<%= art.logo%>" alt="" />
+          </div>
+          <!-- // event logo -->
+          <div class="elogo">
+            <img src="/upload/art/<%= art.eventArt%>" alt="" />
+          </div>
+          <!-- developer info -->
+          <div class="develop">
+            <span>Developed by Dewan ICT,DDCOM</span>
+          </div>
+          <div class="sill">
+            <img src="/upload/art/<%= art.sill %>" alt="" />
+          </div>
+          <!-- ifo body  -->
+          <div class="info">
+            <div class="user_img">
+              <div class="fr">
+                <img src="/upload/art/<%= art.fr%>" alt="" />
+              </div>
+              <div class="uimg">
+                <img src="/upload/userimg/<%= data.photo %>" alt="" />
+              </div>
+            </div>
+            <div class="name">
+              <h1><%= data.name %></h1>
+              <h3>blood group:<%= data.BG %></h3>
+              <h3><%= data.phone %></h3>
+              <h3>Reg Num:<%= data.regNo %></h3>
+            </div>
+          </div>
+          <div class="bg-img">
+            <img src="/upload/art/<%= art.cardBG %>" alt="" />
+          </div>
+          <div class="date">
+            <div class="con_t">
+              <h1>24 June 2022</h1>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      const print = () => {
+        let doc = document.querySelector(".print_con").innerHTML;
+        let a = window.open("", "", "height=677, width=510");
+        a.document.write(
+          `<head><style>
+              @import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Carter+One&family=Fredoka+One&display=swap");
+  
+               .print_con {
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+  }
+   .print_con .print-document {
+    width: 554px;
+    height: 647px;
+    position: relative;
+    border-radius: 5px;
+    box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.438);
+    background-color: #fff;
+    overflow: hidden;
+    letter-spacing: 0;
+  }
+   .print_con .print-document .bg-img {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+  }
+   .print_con .print-document .bg-img img {
+    width: 100%;
+    height: 100%;
+  }
+   .print_con .print-document .logo {
+    position: absolute;
+    z-index: 1;
+    left: 20px;
+    top: 20px;
+  }
+   .print_con .print-document .logo img {
+    width: 160px;
+  }
+   .print_con .print-document .elogo {
+    position: absolute;
+    z-index: 1;
+    right: 20px;
+    top: 20px;
+  }
+   .print_con .print-document .elogo img {
+    width: 200px;
+  }
+   .print_con .print-document .develop {
+    position: absolute;
+    z-index: 1;
+    bottom: 5px;
+    left: 10px;
+  }
+   .print_con .print-document .develop span {
+    color: red;
+    font-size: 15px;
+    font-weight: 700;
+  }
+   .print_con .print-document .sill {
+    position: absolute;
+    z-index: 1;
+    right: 25px;
+    bottom: -2px;
+  }
+   .print_con .print-document .sill img {
+    width: 200px;
+    filter: drop-shadow(1px 0 5px rgb(255, 255, 255));
+  }
+   .print_con .print-document .info {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    z-index: 1;
+  }
+   .print_con .print-document .info .user_img {
+    width: 100;
+    height: 150px;
+    z-index: 3;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 170px;
+  }
+   .print_con .print-document .info .user_img .fr {
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    z-index: 4;
+  }
+   .print_con .print-document .info .user_img .fr img {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 4;
+    -o-object-fit: contain;
+       object-fit: contain;
+  }
+   .print_con .print-document .info .user_img .uimg {
+    width: 100%;
+    height: 300px;
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+  }
+   .print_con .print-document .info .user_img .uimg img {
+    height: 170px;
+    width: 170px;
+    -o-object-fit: cover;
+       object-fit: cover;
+    padding-top: 70px;
+  }
+   .print_con .print-document .info .name {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    top: 20px;
+  }
+   .print_con .print-document .info .name h1 {
+    color: red;
+    font-size: 30px;
+  }
+   .print_con .print-document .info .name h3 {
+    color: rgb(27, 27, 27);
+  }
+   .print_con .print-document .date {
+    width: 100%;
+    position: absolute;
+    z-index: 2;
+    bottom: 40px;
+  }
+   .print_con .print-document .date .con_t {
+    background-color: red;
+    width: 250px;
+    padding: 10px;
+    border-radius: 0px 40px 40px 0;
+  }
+  
+  .main_user {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    position: relative;
+    background-image: radial-gradient(circle 860px at 11.8% 33.5%, rgb(245, 162, 187) 0%, rgb(245, 155, 167) 30.5%, rgb(231, 146, 127) 56.1%, rgb(241, 173, 143) 75.6%, rgb(238, 211, 193) 100.2%);
+    flex-direction: column;
+    align-items: center;
+  }
+  .main_user .user_con {
+    text-align: center;
+    margin: 20px;
+  }
+  
+              </style></head>`
+        );
+        a.document.write(`<div class="print_con">`);
+        a.document.write(doc);
+        a.document.write(`</div">`);
+        a.document.close();
+        a.document.onload(() => {
+          a.print();
+        });
+      };
+
+      function downloadURI(uri, name) {
+        var link = document.createElement("a");
+        link.download = name;
+        link.href = uri;
+        link.click();
+        //after creating link you should delete dynamic link
+        //clearDynamicLink(link);
+      }
+      // save as img
+      const shot = () => {
+        window.scrollTo(0, 0);
+        html2canvas(document.querySelector(".print-document")).then(
+          (canvas) => {
+            // console.log(canvas.toDataURL("image/jpeg", 0.9));
+            var myImage = canvas.toDataURL("image/jpeg", 1);
+            downloadURI("data:" + myImage, "yourImage.jpeg");
+          }
+        );
+      };
+    </script>
+  </body>
+</html>

@@ -249,6 +249,7 @@
                       class="form-control form-control-sm"
                       id="formFileSm"
                       type="file"
+                      name="logo"
                       required
                     />
                   </div>
@@ -278,7 +279,11 @@
                 </a>
               </div>
               <div class="card-body p-3">
-                <form action="#" method="post">
+                <form
+                  action="/uploadSill"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
                   <p class="mb-0 text-sm"></p>
                   <a href="javascript:;">
                     <h5>Conferm sill</h5>
@@ -297,6 +302,7 @@
                       id="formFileSm"
                       type="file"
                       required
+                      name="logo"
                     />
                   </div>
                   <div
@@ -326,7 +332,11 @@
                 </a>
               </div>
               <div class="card-body p-3">
-                <form action="#" method="post">
+                <form
+                  action="/uploadeart"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
                   <p class="mb-0 text-sm"></p>
                   <a href="javascript:;">
                     <h5>Event Art</h5>
@@ -345,6 +355,7 @@
                       id="formFileSm"
                       type="file"
                       required
+                      name="logo"
                     />
                   </div>
                   <div
@@ -373,7 +384,11 @@
                 </a>
               </div>
               <div class="card-body p-3">
-                <form action="#" method="post">
+                <form
+                  action="/uploadbg"
+                  method="post"
+                  enctype="multipart/form-data"
+                >
                   <p class="mb-0 text-sm"></p>
                   <a href="javascript:;">
                     <h5>card background</h5>
@@ -391,6 +406,7 @@
                       id="formFileSm"
                       type="file"
                       required
+                      name="logo"
                     />
                   </div>
                   <div
@@ -406,6 +422,55 @@
                 </form>
               </div>
             </div>
+          </div>
+        </div>
+      </div>
+      <!-- //no  -->
+      <div class="col-xl-3 col-md-6 mb-xl-0 mb-4">
+        <div class="card card-blog card-plain">
+          <div class="card-header p-0 mt-n4 mx-3">
+            <a class="d-block shadow-xl border-radius-xl">
+              <img
+                src="/upload/art/<%= data.fr %>"
+                alt="img-blur-shadow"
+                class="img-fluid shadow border-radius-xl"
+              />
+            </a>
+          </div>
+          <div class="card-body p-3">
+            <form
+              action="/uploadfr"
+              method="post"
+              enctype="multipart/form-data"
+            >
+              <p class="mb-0 text-sm"></p>
+              <a href="javascript:;">
+                <h5>Photo Frame</h5>
+              </a>
+              <p class="mb-4 text-sm">
+                this image is for your Event Art. that show on form and .and png
+                format will be bettar
+              </p>
+              <div class="mb-3">
+                <label for="formFileSm" class="form-label">chouse art</label>
+                <input
+                  accept="image/*"
+                  class="form-control form-control-sm"
+                  id="formFileSm"
+                  type="file"
+                  required
+                  name="logo"
+                />
+              </div>
+              <div class="d-flex align-items-center justify-content-between">
+                <button
+                  type="submit"
+                  class="btn btn-outline-primary btn-sm mb-0"
+                >
+                  change frame
+                </button>
+              </div>
+            </form>
           </div>
         </div>
       </div>

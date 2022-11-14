@@ -17,6 +17,10 @@ const ArtSchema = new mongoose.Schema({
     type: String,
     required: [true, 'Please specify the status of your course.'],
   },
+  fr: {
+    type: String,
+    required: [true, 'Please specify the status of your course.'],
+  },
 },{ timestamps: true })
 
 module.exports = mongoose.models.Art || mongoose.model('Art', ArtSchema); 

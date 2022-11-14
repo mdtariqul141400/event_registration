@@ -2,6 +2,7 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
 body {
@@ -78,4 +79,185 @@ body .main .con button {
 .inpg select {
   font-size: 20px;
   padding: 2px;
+}
+
+.main-card {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  background-image: radial-gradient(circle 860px at 11.8% 33.5%, rgb(240, 30, 92) 0%, rgb(244, 49, 74) 30.5%, rgb(249, 75, 37) 56.1%, rgb(250, 88, 19) 75.6%, rgb(253, 102, 2) 100.2%);
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.main-card .head {
+  width: 100%;
+  text-align: center;
+  padding: 20px;
+}
+.main-card .head button {
+  font-size: 30px;
+  font-weight: 600;
+  padding: 15px 30px;
+  background: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.342);
+  transition: all 0.4s;
+}
+.main-card .head button:hover {
+  background-color: lightgreen;
+  color: #fff;
+  box-shadow: 5px 5px 10px rgba(144, 238, 144, 0.438);
+}
+.main-card .print_con {
+  width: 100%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.main-card .print_con .print-document {
+  width: 554px;
+  height: 647px;
+  position: relative;
+  border-radius: 5px;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.438);
+  background-color: #fff;
+  overflow: hidden;
+  letter-spacing: 0;
+}
+.main-card .print_con .print-document .bg-img {
+  position: absolute;
+  z-index: 0;
+  left: 0;
+  top: 0;
+}
+.main-card .print_con .print-document .bg-img img {
+  width: 100%;
+  height: 100%;
+}
+.main-card .print_con .print-document .logo {
+  position: absolute;
+  z-index: 1;
+  left: 20px;
+  top: 20px;
+}
+.main-card .print_con .print-document .logo img {
+  width: 160px;
+}
+.main-card .print_con .print-document .elogo {
+  position: absolute;
+  z-index: 1;
+  right: 20px;
+  top: 20px;
+}
+.main-card .print_con .print-document .elogo img {
+  width: 170px;
+}
+.main-card .print_con .print-document .develop {
+  position: absolute;
+  z-index: 1;
+  bottom: 5px;
+  left: 10px;
+}
+.main-card .print_con .print-document .develop span {
+  color: red;
+  font-size: 15px;
+  font-weight: 700;
+}
+.main-card .print_con .print-document .sill {
+  position: absolute;
+  z-index: 1;
+  right: 25px;
+  bottom: -2px;
+}
+.main-card .print_con .print-document .sill img {
+  width: 200px;
+  filter: drop-shadow(1px 0 5px rgb(255, 255, 255));
+}
+.main-card .print_con .print-document .info {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+}
+.main-card .print_con .print-document .info .user_img {
+  width: 100;
+  height: 200px;
+  z-index: 3;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 120px;
+  overflow: hidden;
+}
+.main-card .print_con .print-document .info .user_img .fr {
+  width: 200px;
+  height: 200px;
+  position: absolute;
+  z-index: 4;
+}
+.main-card .print_con .print-document .info .user_img .fr img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  z-index: 4;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+.main-card .print_con .print-document .info .user_img .uimg {
+  width: 100%;
+  position: absolute;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+}
+.main-card .print_con .print-document .info .user_img .uimg img {
+  height: 170px;
+  width: 170px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.main-card .print_con .print-document .info .name {
+  width: 100%;
+  text-align: center;
+  position: relative;
+  top: 20px;
+}
+.main-card .print_con .print-document .info .name h1 {
+  color: red;
+  font-size: 30px;
+}
+.main-card .print_con .print-document .info .name h3 {
+  color: rgb(27, 27, 27);
+}
+.main-card .print_con .print-document .date {
+  width: 100%;
+  position: absolute;
+  z-index: 2;
+  bottom: 40px;
+}
+.main-card .print_con .print-document .date .con_t {
+  background-color: red;
+  width: 250px;
+  padding: 10px;
+  border-radius: 0px 40px 40px 0;
+}
+
+.main_user {
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  position: relative;
+  background-image: radial-gradient(circle 860px at 11.8% 33.5%, rgb(245, 162, 187) 0%, rgb(245, 155, 167) 30.5%, rgb(231, 146, 127) 56.1%, rgb(241, 173, 143) 75.6%, rgb(238, 211, 193) 100.2%);
+  flex-direction: column;
+  align-items: center;
+}
+.main_user .user_con {
+  text-align: center;
+  margin: 20px;
 }/*# sourceMappingURL=style.css.map */
