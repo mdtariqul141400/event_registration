@@ -100,7 +100,7 @@ const PaymentCon = ()=>{
         },
         gopayment: async (req,res)=>{
             try {
-                console.log(req.headers.origin)
+               
                 const datadb = await Payment.findOne({name:"payment"});
                 if(!datadb.status){
                     return res.send("gatway off")

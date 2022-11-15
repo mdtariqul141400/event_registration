@@ -77,7 +77,7 @@ const userCon = ()=>{
         sucsses:async (req,res)=>{
             try{
                 const paydata = req.body;
-                console.log(req.body)
+            
                 const update = {
                     status:true,
                     name:"online",

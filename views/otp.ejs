@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/ulog.css" />
+  </head>
+  <body>
+    <div class="box">
+      <form action="/votp" method="post">
+        <div class="form">
+          <h2>OTP</h2>
+          <p>
+            Enter The OTP in <span class="s">40</span> second That send To your
+            Phone Number
+          </p>
+          <input
+            type="number"
+            value="<%= phone %>"
+            hidden
+            readonly
+            name="phone"
+            required="required"
+          />
+          <div class="inputbox">
+            <input type="number" name="otp" required="required" />
+            <span>Enter The OTP</span>
+            <i></i>
+          </div>
+          <!-- <div class="inputbox">
+          <input type="Password" required="required" />
+          <span>Password</span>
+          <i></i>
+        </div> -->
+          <div class="links">
+            <!-- <a href="Forget Password"></a>
+          <a href="Sign up"></a> -->
+          </div>
+          <input id="sbtn" type="Submit" value="Verify OTP" />
+          <a class="tr" href="/userLogin">Try Again</a>
+        </div>
+      </form>
+    </div>
+    <script>
+      var sbt = document.querySelector("#sbtn");
+      var tr = document.querySelector(".tr");
+      var time = 40;
+      var timerId = setInterval(() => {
+        getTime();
+      }, 1000);
+      function getTime() {
+        if (!time) {
+          return stopTime();
+        }
+        time--;
+        document.querySelector(".s").innerHTML = time;
+      }
+      function stopTime() {
+        clearInterval(timerId);
+        sbt.disabled = true;
+        tr.style.display = "block";
+      }
+    </script>
+  </body>
+</html>

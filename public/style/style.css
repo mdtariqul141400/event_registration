@@ -230,7 +230,9 @@ body .main .con button {
 }
 .main-card .print_con .print-document .info .name h1 {
   color: red;
-  font-size: 30px;
+  font-size: 35px;
+  letter-spacing: 1px;
+  font-family: "Carter One", cursive;
 }
 .main-card .print_con .print-document .info .name h3 {
   color: rgb(27, 27, 27);
