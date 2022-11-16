@@ -5,53 +5,63 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-    <link rel="stylesheet" href="./style/user.css" />
+    <link rel="stylesheet" href="/style/user.css" />
   </head>
   <body>
     <div class="box">
       <div class="form">
         <div class="udes">
           <div class="img">
-            <img src="./img/nahid.jpg" alt="" />
+            <img src="/upload/userimg/<%= user.photo %>" alt="" />
           </div>
           <div class="name">
-            <h1>Nahid Hasan Sagar</h1>
-            <h3><span>Phone:</span> 01741013363</h3>
-            <h3><span>Blood Group:</span> AB+</h3>
+            <h1><%= user.name%></h1>
+            <h3><span>Phone:</span> <%= user.phone %></h3>
+            <h3><span>Blood Group:</span> <%= user.BG%></h3>
           </div>
         </div>
         <div class="act">
-          <span class="reg">RegNum: 9988</span>
+          <span class="reg">RegNum: <%= user.regNo %></span>
           <div class="tab">
             <table>
               <tr>
                 <td>address</td>
-                <td>: hapaniya</td>
+                <td>: <%= user.address%></td>
               </tr>
               <tr>
                 <td>T-shirt</td>
-                <td>: XXL</td>
+                <td>: <%= user.dress%></td>
               </tr>
               <tr>
                 <td>Type</td>
-                <td>: Self</td>
+                <td>: <%= user.regfor %></td>
               </tr>
             </table>
           </div>
           <div class="pay">
-            <!-- <div style="background: #83ff3b" class="b">
+            <% if(user.Payment.status){%>
+            <div style="background: #83ff3b" class="b">
               <h1><span>Paymen Status</span> :Paid</h1>
-            </div> -->
-            <!-- <div style="background: #3bf2ff" class="b">
+            </div>
+            <% }else if(user.Payment.name === "cash"){%>
+            <div style="background: #3bf2ff" class="b">
               <h1><span>Paymen Status</span> :Painding</h1>
-            </div> -->
+            </div>
+            <%}else{%>
             <div style="background: #be0000" class="b">
               <h1><span>Paymen Status</span> :UnPaid</h1>
             </div>
+            <% }%>
           </div>
           <div class="btn">
             <div class="b">
-              <a href="/card/1">download card</a>
+              <% if(user.Payment.status){%>
+              <a href="/card/<%= user.regNo %>">download card</a>
+              <% }else if(user.Payment.name === "cash"){%>
+              <a href="#">contact Admin</a>
+              <%}else{%>
+              <div style="background: #be0000" class="b"></div>
+              <% }%>
             </div>
           </div>
         </div>

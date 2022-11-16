@@ -1,4 +1,5 @@
 const ncrip = require("ncrip")
+const User = require("../models/userreg");
 const Admin = require("../models/Admin")
 function Auth (){
     return {
@@ -18,6 +19,26 @@ function Auth (){
             } catch (error) {
                 console.log(error);
                 return res.redirect("/adminlogin")
+            }
+        },
+        user:async (req,res,next)=>{
+            try {
+                const {temp,step} = req.cookies;
+                if(!temp && !step){
+                   
+                    return res.redirect("/userLogin");
+                }
+                const _id = ncrip.dnc(temp,step);
+                const userdb = await User.findOne({_id});
+                if(!userdb){
+                   
+                    return res.redirect("/userLogin");
+                }
+                req.user = userdb;
+                next()
+            } catch (error) {
+                console.log(error);
+                res.redirect("/userLogin")
             }
         }
     }

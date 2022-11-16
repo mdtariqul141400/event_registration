@@ -20,6 +20,10 @@ const route = require('express').Router();
 route.get('/',(req,res)=>{
     res.render("form")
 });
+//profile 
+route.get("/profile",Auth().user,(req,res)=>{
+    res.render("user",{user:req.user})
+})
 
 //payment getway setup
 route.get("/paycon",PaymentCon().getPage)
@@ -47,7 +51,7 @@ route.get("/otp",(req,res)=>{
     res.render("otp")
 })
 // card 
-route.get("/card/:id",CardCon().getcard);
+route.get("/card/:id",Auth().user,CardCon().getcard);
 route.post("/success",userCon().sucsses);
 //art controler
 route.post("/uploadlogo",Auth().Admin,ArtCon().upload.single("logo"),ArtCon().uploadLogo);

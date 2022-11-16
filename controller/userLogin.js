@@ -45,7 +45,7 @@ const UserLoginCon = ()=>{
                     let key = ncrip.enc(userdb._id,rand);
                     res.cookie("temp",key);
                     res.cookie("step",rand);
-                    res.redirect('/card/'+userdb.regNo);
+                    res.redirect('/profile');
                 }else{
                     return res.redirect("/ulogin")
                 }

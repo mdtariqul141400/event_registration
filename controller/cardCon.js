@@ -8,6 +8,11 @@ const cardCon = ()=>{
     return {
         getcard : async (req,res)=>{
             const regnom = req.params.id;
+            const user = req.user;
+            if(user.regNo != regnom){
+                console.log(user);
+                return res.redirect("/userLogin")
+            }
             // host
             try{
                 const artdb = await Arts.findOne({});
@@ -65,7 +70,7 @@ const cardCon = ()=>{
                         art:artdb
                     })
                 }else{
-                    res.redirect("/");
+                    res.redirect("/userLogin");
                 }
             }catch(e){
                 console.log(e);

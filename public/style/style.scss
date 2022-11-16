@@ -28,6 +28,25 @@ body {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    nav {
+      position: absolute;
+      top: 0px;
+      z-index: 10;
+      width: 100%;
+      text-align: right;
+      padding: 10px 30px;
+      ul {
+        list-style: none;
+        li {
+          a {
+            font-size: 25px;
+            font-weight: 700;
+            color: #fff;
+            text-decoration: none;
+          }
+        }
+      }
+    }
     h1 {
       font-size: 40px;
       font-family: "Carter One", cursive;
@@ -163,8 +182,8 @@ body {
       .logo {
         position: absolute;
         z-index: 1;
-        left: 20px;
-        top: 20px;
+        left: 15px;
+        top: 10px;
         img {
           width: 160px;
         }
@@ -256,6 +275,7 @@ body {
           }
           h3 {
             color: rgb(27, 27, 27);
+            text-transform: capitalize;
           }
         }
       }

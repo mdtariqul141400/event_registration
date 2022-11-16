@@ -58,7 +58,9 @@ const userCon = ()=>{
                     next();
                 }else if(data.pay === "Cash"){
                     console.log("cash")
-                    res.redirect("/card/"+resdb.regNo);
+                    res.redirect("/userLogin");
+                }else{
+                    res.redirect("userLogin")
                 }
             } catch (error) {
                 if(req.file){
@@ -85,7 +87,7 @@ const userCon = ()=>{
                 }
                 const resdb = await User.findOneAndUpdate({regNo:paydata.tran_id},{Payment:update});
                 
-                res.redirect("/card/"+resdb.regNo)
+                res.redirect("/")
             }catch(e){
                 console.log(e);
                 res.send(e)

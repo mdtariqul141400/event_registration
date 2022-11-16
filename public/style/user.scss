@@ -1,0 +1,317 @@
+@import url("https://fonts.googleapis.com/css2?family=Baloo+2:wght@400;500;600;700;800&family=Carter+One&family=Fredoka+One&display=swap");
+
+/* // font-family: 'Baloo 2', cursive;
+// font-family: 'Carter One', cursive;
+// font-family: 'Fredoka One', cursive; */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #23242a;
+  font-family: "Baloo 2", cursive;
+}
+
+.box {
+  position: relative;
+  width: 380px;
+  max-width: 400px;
+  height: 520px;
+  background: #1c1c1c;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #ff4545, #ff4545);
+  animation: Tariqul 4s linear infinite;
+  transform-origin: bottom right;
+}
+
+.box::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #ff4545, #ff4545);
+  animation: Tariqul 6s linear infinite;
+  transform-origin: bottom right;
+}
+
+.box::after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 380px;
+  height: 420px;
+  background: linear-gradient(0deg, transparent, #ff4545, #ff4545);
+  animation: Tariqul 6s linear infinite;
+  transform-origin: bottom right;
+  animation-delay: 3s;
+}
+
+@keyframes Tariqul {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.form {
+  position: absolute;
+  inset: 2px;
+  border-radius: 8px;
+  background: #28292d;
+  overflow: hidden;
+  z-index: 10;
+  display: flex;
+  flex-direction: column;
+  z-index: 3;
+}
+.form h2 {
+  color: #ff4545;
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0.1em;
+}
+.form p {
+  text-align: center;
+  margin-top: 10px;
+  color: #fff;
+}
+
+.inputbox {
+  position: relative;
+  width: 300px;
+  margin-top: 35px;
+}
+.inputbox input {
+  position: relative;
+  width: 100%;
+  padding: 20px 10px 10px;
+  background: transparent;
+  border: none;
+  outline: none;
+  color: #23242a;
+  font-size: 1em;
+  letter-spacing: -0.05em;
+  z-index: 5;
+}
+.inputbox span {
+  position: absolute;
+  left: 0;
+  padding: 20px 10px 10px;
+  font-size: 1em;
+  color: #8f8f8f;
+  pointer-events: none;
+  letter-spacing: 0.05em;
+  transition: 0.5s;
+}
+.inputbox input:valid ~ span,
+.inputbox input:focus ~ span {
+  color: rgb(255, 40, 40);
+  transform: translateX(-10px) translateY(-34px);
+  font-size: 0.75em;
+}
+
+.inputbox i {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: #ff4545;
+  border-radius: 4px;
+  transition: 0.5s;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.inputbox input:valid ~ i,
+.inputbox input:focus ~ i {
+  height: 44px;
+}
+.links {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px;
+}
+.links a {
+  margin: 10px 0;
+  font-size: 0.75em;
+  color: #8f8f8f;
+  text-decoration: none;
+}
+.links a:hover,
+.links a:nth-child(2) {
+  color: #ff4545;
+}
+input[type="submit"],
+.tr {
+  text-decoration: none;
+  border: none;
+  outline: none;
+  background: #ff4545;
+  padding: 11px 25px;
+  margin-top: 10px;
+  border-radius: 4px;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+}
+.tr {
+  color: white;
+  display: none;
+}
+
+.udes {
+  width: 100%;
+  position: relative;
+  text-align: center;
+  .img {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    margin-top: 20px;
+    img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      animation: branim 5s linear infinite;
+    }
+  }
+  .name {
+    width: 100%;
+    position: relative;
+    text-align: center;
+    h1 {
+      font-size: 25px;
+      color: #ff4545;
+    }
+    h3 {
+      color: #cdcdcd;
+      font-size: 16px;
+      font-weight: 400;
+      span {
+        color: #8f8f8f;
+        font-weight: 600;
+      }
+    }
+  }
+}
+.act {
+  width: 100%;
+  position: relative;
+  margin-top: 30px;
+  background-color: #ff4545;
+  height: 100%;
+  border-radius: 30px 30px 0 0;
+  .reg {
+    padding: 6px 17px;
+    position: absolute;
+    background-color: #1c1c1c;
+    color: #ff4545;
+    border-radius: 30px;
+    font-size: 17px;
+    font-weight: 600;
+    top: -20px;
+    left: 50%;
+    transform: translate(-50%);
+    border: 3px solid #ff4545;
+    text-align: center;
+  }
+  .tab {
+    position: relative;
+    width: 100%;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    table {
+      width: 100%;
+      margin: 0 30px;
+      overflow: hidden;
+      tr {
+        width: 100%;
+        text-transform: capitalize;
+      }
+    }
+  }
+  .pay {
+    width: 100%;
+    text-align: center;
+    .b {
+      margin: 5px 0;
+      h1 {
+        font-size: 20px;
+      }
+    }
+  }
+  .btn {
+    position: relative;
+    width: 100%;
+    top: 5px;
+    z-index: 10;
+    text-align: center;
+    .b {
+      width: 100%;
+      position: relative;
+      text-align: center;
+      display: flex;
+      justify-content: center;
+      a {
+        font-size: 20px;
+        font-weight: 700;
+        text-decoration: none;
+        background: #1c1c1c;
+        padding: 5px 10px;
+        color: #fff;
+        border-radius: 20px;
+        transition: all 0.3s linear;
+        &:hover {
+          box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.548);
+        }
+      }
+    }
+  }
+}
+
+@keyframes branim {
+  0% {
+    border-top: 2px solid #ff4545;
+    border-bottom: 2px solid #ff4545;
+    border-left: 2px solid #23242a;
+    border-right: 2px solid #23242a;
+  }
+  50% {
+    border-left: 2px solid #ff4545;
+    border-right: 2px solid #ff4545;
+    border-top: 2px solid #23242a;
+    border-bottom: 2px solid #23242a;
+  }
+  100% {
+    border-top: 2px solid #ff4545;
+    border-bottom: 2px solid #ff4545;
+    border-left: 2px solid #23242a;
+    border-right: 2px solid #23242a;
+  }
+}
