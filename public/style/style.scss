@@ -138,6 +138,7 @@ body {
     width: 100%;
     text-align: center;
     padding: 20px;
+    z-index: 10;
     button {
       font-size: 30px;
       font-weight: 600;
@@ -280,15 +281,18 @@ body {
         }
       }
       .date {
-        width: 100%;
         position: absolute;
         z-index: 2;
-        bottom: 40px;
+        bottom: 20px;
+        left: 0px;
         .con_t {
-          background-color: red;
+          transform: rotate(-90deg);
+          position: relative;
+          left: -60px;
+          bottom: 100px;
+          font-family: "Rampart One", cursive;
           width: 250px;
           padding: 10px;
-          border-radius: 0px 40px 40px 0;
         }
       }
     }

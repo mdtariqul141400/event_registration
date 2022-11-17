@@ -112,6 +112,7 @@ body .main .con button {
   width: 100%;
   text-align: center;
   padding: 20px;
+  z-index: 10;
 }
 .main-card .head button {
   font-size: 30px;
@@ -256,16 +257,19 @@ body .main .con button {
   text-transform: capitalize;
 }
 .main-card .print_con .print-document .date {
-  width: 100%;
   position: absolute;
   z-index: 2;
-  bottom: 40px;
+  bottom: 20px;
+  left: 0px;
 }
 .main-card .print_con .print-document .date .con_t {
-  background-color: red;
+  transform: rotate(-90deg);
+  position: relative;
+  left: -60px;
+  bottom: 100px;
+  font-family: "Rampart One", cursive;
   width: 250px;
   padding: 10px;
-  border-radius: 0px 40px 40px 0;
 }
 
 .main_user {
