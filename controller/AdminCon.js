@@ -23,6 +23,9 @@ const AdminCon = ()=>{
             try{
                 const data = req.body;
                 const db = await Admin.findOne({user:data.user});
+                if(!db){
+                    return res.redirect("/")
+                }
                 const dpass = ncrip.dnc(db.PassWord,1414);
                 if(data.pass === dpass){
                     const rand = Math.round(Math.random()*10000);
@@ -37,6 +40,34 @@ const AdminCon = ()=>{
                 console.log(error);
                 res.send(error)
             }
+        },
+        changeUser:async (req,res)=>{
+            try {
+                const {user} = req.body;
+                const resdb = await Admin.findOneAndUpdate({},{user});
+                res.redirect("/setting");
+            } catch (error) {
+                console.log(error);
+                res.send(error);
+
+            }
+        },
+        changePass:async (req,res)=>{
+            try {
+                const {pass} = req.body;
+                const PassWord = ncrip.enc(pass,1414)
+                const resdb = await Admin.findOneAndUpdate({},{PassWord});
+                res.redirect("/setting");
+            } catch (error) {
+                console.log(error);
+                res.send(error);
+
+            }
+        },
+        logout:(req,res)=>{
+            res.cookie("offer","");
+            res.cookie("loc","");
+            res.redirect('/');
         }
     }
 }

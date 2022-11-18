@@ -14,6 +14,8 @@ const CardCon = require("../controller/cardCon");
 const Admincon = require("../controller/AdminCon")
 // user aaction 
 const UserLoginCon = require("../controller/userLogin")
+///event controler
+const Event = require("../controller/EventInfoCon")
 // routing start heare ------>
 
 const route = require('express').Router();
@@ -62,6 +64,16 @@ route.post("/uploadfr",Auth().Admin,ArtCon().upload.single("logo"),ArtCon().uplo
 // Admin Controler 
 route.get("/adminlogin",Admincon().getLogin);
 route.post("/login",Admincon().login)
+route.post("/updateAdminUser",Auth().Admin,Admincon().changeUser);
+route.post("/updateAdminPass",Auth().Admin,Admincon().changePass);
+route.get("/adlogout",Admincon().logout);
+//update event data 
+route.post("/eventname",Auth().Admin,Event().updateName);
+route.post("/eventdate",Auth().Admin,Event().updateDate);
+route.get("/eventstatus",Auth().Admin,Event().updateStatus);
+
+//test
+route.get("/qq",userCon().qq)
 
 
 module.exports = route;

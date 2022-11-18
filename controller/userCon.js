@@ -17,6 +17,17 @@ var storage = multer.diskStorage({
 
 const userCon = ()=>{
     return {
+        qq:async (req,res)=>{
+            let now = new Date();
+            let get = new Date(2022,11,15)
+            try {
+                const data = await User.find({createdAt: {$lte: get}})
+                console.log(get.toDateString())
+                res.send(data)
+            } catch (error) {
+                console.log
+            }
+        },
         add: async (req,res,next)=>{
             const data = req.body;
             
