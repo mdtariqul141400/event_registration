@@ -38,6 +38,15 @@ const CashPay = ()=>{
             }catch(error){
 
             }
+        },
+        copnfirm: async (req,res)=>{
+            try{
+                const _id = req.params.id;
+                const us = await User.findOne({_id});
+                res.render("confirmPay",{user:us})
+            }catch(error){
+
+            }
         }
     }
 }

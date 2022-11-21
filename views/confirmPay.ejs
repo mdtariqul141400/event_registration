@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="/style/user.css" />
+  </head>
+  <body>
+    <div class="box">
+      <div class="form">
+        <div class="udes">
+          <div class="img">
+            <img src="/upload/userimg/<%= user.photo %>" alt="" />
+          </div>
+          <div class="name">
+            <h1><%= user.name%></h1>
+            <h3><span>Phone:</span> <%= user.phone %></h3>
+            <h3><span>Blood Group:</span> <%= user.BG%></h3>
+          </div>
+        </div>
+        <div class="act">
+          <span class="reg">RegNum: <%= user.regNo %></span>
+          <div class="tab">
+            <table>
+              <tr>
+                <td>address</td>
+                <td>: <%= user.address%></td>
+              </tr>
+              <tr>
+                <td>T-shirt</td>
+                <td>: <%= user.dress%></td>
+              </tr>
+              <tr>
+                <td>Type</td>
+                <td>: <%= user.regfor %></td>
+              </tr>
+            </table>
+          </div>
+          <div class="pay">
+            <% if(user.Payment.status){%>
+            <div style="background: #83ff3b" class="b">
+              <h1><span>Paymen Status</span> :Paid</h1>
+            </div>
+            <% }else if(user.Payment.name === "cash"){%>
+            <div style="background: #3bf2ff" class="b">
+              <h1><span>Paymen Status</span> :Painding</h1>
+            </div>
+            <%}else{%>
+            <div style="background: #be0000" class="b">
+              <h1><span>Paymen Status</span> :UnPaid</h1>
+            </div>
+            <% }%>
+          </div>
+          <div class="btn">
+            <div class="b">
+              <a href="/card/">Confirm Payment</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

@@ -84,6 +84,7 @@ route.get("/qq",userCon().qq)
 //cash requist ------====>
 route.get("/cashreq",Auth().Admin,CashPay().getPage);
 route.post("/cashreq",Auth().Admin,CashPay().query);
+route.get("/conferm/:id",Auth().Admin,CashPay().copnfirm);
 
 
 
