@@ -18,11 +18,13 @@ var storage = multer.diskStorage({
 const userCon = ()=>{
     return {
         qq:async (req,res)=>{
-            let now = new Date();
-            let get = new Date(2022,11,15)
+            let now = new Date(2022,11,16,23,0,0,0).getTime();
+            let get = new Date(2022,11,12,23,59,59,0).getTime()
             try {
-                const data = await User.find({createdAt: {$lte: get}})
-                console.log(get.toDateString())
+                const data = await User.find({createdAt: { $lt: get}})
+                console.log(get)
+                console.log("|")
+                // console.log(now)
                 res.send(data)
             } catch (error) {
                 console.log
@@ -61,6 +63,7 @@ const userCon = ()=>{
                     photo:req.file? req.file.filename:"nophoto.png",
                     BG:data.BG,
                     Payment:payment,
+                    regDate: new Date().getTime(),
                 })
                 const resdb = await load.save()
                 console.log(data.pay)

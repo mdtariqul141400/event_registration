@@ -16,6 +16,13 @@ const Admincon = require("../controller/AdminCon")
 const UserLoginCon = require("../controller/userLogin")
 ///event controler
 const Event = require("../controller/EventInfoCon")
+
+// cash payment 
+const CashPay = require("../controller/cashPay")
+
+
+
+
 // routing start heare ------>
 
 const route = require('express').Router();
@@ -74,6 +81,10 @@ route.get("/eventstatus",Auth().Admin,Event().updateStatus);
 
 //test
 route.get("/qq",userCon().qq)
+//cash requist ------====>
+route.get("/cashreq",Auth().Admin,CashPay().getPage);
+route.post("/cashreq",Auth().Admin,CashPay().query);
+
 
 
 module.exports = route;

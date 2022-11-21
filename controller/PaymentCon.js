@@ -137,8 +137,10 @@ const PaymentCon = ()=>{
                     ship_country: 'Bangladesh',
                 };
                 const sslcz = new SSLCommerzPayment(datadb.ID,datadb.pass, datadb.live);
+                
                 sslcz.init(data).then(apiResponse => {
                     // Redirect the user to payment gateway
+                    console.log(apiResponse)
                     let GatewayPageURL = apiResponse.GatewayPageURL
                     res.redirect(GatewayPageURL)
                     console.log('Redirecting to: ', GatewayPageURL)

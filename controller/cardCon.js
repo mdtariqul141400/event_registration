@@ -2,6 +2,7 @@ const User = require("../models/userreg");
 const Arts = require("../models/Arts")
 const PaymentCon = require("./PaymentCon");
 const Payment = require("../models/Payment")
+const Event = require("../models/Data");
 const SSLCommerzPayment = require('sslcommerz-lts')
 
 const cardCon = ()=>{
@@ -17,6 +18,7 @@ const cardCon = ()=>{
             try{
                 const artdb = await Arts.findOne({});
                 const datadb = await User.findOne({regNo:regnom});
+                const edata = await Event.findOne({});
                 if(datadb){
                     if(!datadb.Payment.status){
                         const getpayment = async (req,res)=>{
@@ -67,7 +69,8 @@ const cardCon = ()=>{
                      
                     res.render("card",{
                         data:datadb,
-                        art:artdb
+                        art:artdb,
+                        edata
                     })
                 }else{
                     res.redirect("/userLogin");

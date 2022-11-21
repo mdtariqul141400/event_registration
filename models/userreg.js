@@ -41,6 +41,10 @@ const UserSchema = new mongoose.Schema({
   BG :{
     type: String,
     required: [false, 'Please specify the detailse course.'],
+  },
+  regDate:{
+    type: Number,
+    required:true,
   }
 },{ timestamps: true })
 
