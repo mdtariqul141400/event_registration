@@ -54,7 +54,8 @@ const userCon = ()=>{
                 }
             }
 
-            const chEntry = await User.findOne({hone:data.phone});
+            const chEntry = await User.findOne({phone:data.phone});
+            console.log(chEntry)
             if(chEntry){
                 if(chEntry.Payment.status){
                     return res.redirect("userLogin")
