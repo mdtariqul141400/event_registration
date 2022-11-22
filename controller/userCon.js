@@ -53,6 +53,17 @@ const userCon = ()=>{
                     name:"un"
                 }
             }
+
+            const chEntry = await User.findOne({hone:data.phone});
+            if(chEntry){
+                if(chEntry.Payment.status){
+                    return res.redirect("userLogin")
+                }else{
+                    req.user= chEntry;
+                    return next();
+                }
+            }
+
                 const lastData = await User.find().sort({_id:-1}).limit(1);
                 const lastRegNum = lastData[0]? lastData[0].regNo: 0;
                 const load = new User({

@@ -1,6 +1,7 @@
 const OTP = require("../models/OTP");
 const ncrip = require("ncrip");
 const User = require("../models/userreg");
+const sendOTP = require("../controller/sendOtp")
 const UserLoginCon = ()=>{
     return {
         getpage: (req,res)=>{
@@ -19,6 +20,8 @@ const UserLoginCon = ()=>{
                 }
                 const otp = Math.round(Math.random() * 90000)
                 console.log("your OTP is:"+otp)
+                //send otp option
+                const resOtp =await sendOTP(phone,otp)
                 const Load = new OTP(
                     {
                         Phone:phone,
