@@ -18,16 +18,18 @@ var storage = multer.diskStorage({
 const userCon = ()=>{
     return {
         qq:async (req,res)=>{
-            let now = new Date(2022,11,16,23,0,0,0).getTime();
-            let get = new Date(2022,11,12,23,59,59,0).getTime()
+            let today = new Date();
             try {
-                const data = await User.find({createdAt: { $lt: get}})
-                console.log(get)
-                console.log("|")
-                // console.log(now)
-                res.send(data)
+                
+                const countuser = await User.find({createdAt:{
+                    $lte : new Date(2022,10,today.getDate()-1,23,59,59,60),
+                    $gte:new Date(2022,10,today.getDate()-1)
+                }}).countDocuments();
+                console.log(countuser)
+                
+                res.send("cou:"+countuser)
             } catch (error) {
-                console.log
+                console.log(error)
             }
         },
         add: async (req,res,next)=>{

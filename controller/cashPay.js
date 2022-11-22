@@ -45,7 +45,31 @@ const CashPay = ()=>{
                 const us = await User.findOne({_id});
                 res.render("confirmPay",{user:us})
             }catch(error){
+                console.log(error);
+                res.send(error)
+            }
+        },
+        confirmPay: async (req,res)=>{
+            try{
+                const _id = req.params.id;
+                const Payment = {
+                    status: true,
+                    name:"Cash",
+                    pay_data:{
+                        payment_id:`Cash-${new Date().getTime()}-${req.user._id}`,
+                        date:new Date().toISOString(),
+                        admin:req.user.name
+                    }
+                };
 
+                const resdb = await User.findByIdAndUpdate({_id},{Payment});
+                if(resdb){
+                    return  res.redirect("/cashreq")
+                }
+                return  res.redirect("/cashreq")
+            }catch(error){
+                console.log(error);
+                res.send(error);
             }
         }
     }

@@ -151,6 +151,37 @@ const PaymentCon = ()=>{
                
                 
             },
+            upsmsApi:async (req,res)=>{
+                try{
+                    const {sms_api} = req.body;
+                    const data = await Payment.updateOne({name:"payment"},{sms_api});
+                    res.redirect("/paycon");
+                }catch(error){
+                    console.log(error);
+                    res.send(error);
+                }
+            },
+            upsmsId:async (req,res)=>{
+                try{
+                    const {sms_id} = req.body;
+                    const data = await Payment.updateOne({name:"payment"},{sms_id});
+                    res.redirect("/paycon");
+                }catch(error){
+                    console.log(error);
+                    res.send(error);
+                }
+            },
+            upSmSStatus: async (req,res)=>{
+                try {
+                        const data2 = await Payment.findOne({name:"payment"});
+                        const data = await Payment.updateOne({name:"payment"},{ sms_status : !data2.sms_status});
+                        res.redirect("/paycon");
+                    
+                } catch (error) {
+                    console.log(error);
+                    res.send(error)
+                }
+            },
         }
 }
 

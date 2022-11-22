@@ -126,15 +126,23 @@
                 </div>
                 <div class="text-end pt-1">
                   <p class="text-sm mb-0 text-capitalize">Today's Money</p>
-                  <h4 class="mb-0">$53k</h4>
+                  <h4 class="mb-0"><%= stats.payment.today %> tk</h4>
                 </div>
               </div>
               <hr class="dark horizontal my-0" />
               <div class="card-footer p-3">
                 <p class="mb-0">
+                  <% const perpay = ((stats.payment.tomorow -
+                  stats.payment.today)/stats.payment.tomorow)*100 %> <%
+                  if(perpay < 0){ %>
                   <span class="text-success text-sm font-weight-bolder"
-                    >+55% </span
-                  >than last Day
+                    ><%= Math.abs(perpay) %>%
+                  </span>
+                  <% }else{ %>
+                  <span class="text-danger text-sm font-weight-bolder"
+                    ><%= -Math.abs(perpay) %>%
+                  </span>
+                  <% } %> than last Day
                 </p>
               </div>
             </div>
@@ -150,15 +158,23 @@
                 </div>
                 <div class="text-end pt-1">
                   <p class="text-sm mb-0 text-capitalize">Today's Users</p>
-                  <h4 class="mb-0">2,300</h4>
+                  <h4 class="mb-0"><%= stats.user.today %></h4>
                 </div>
               </div>
               <hr class="dark horizontal my-0" />
               <div class="card-footer p-3">
                 <p class="mb-0">
+                  <% const per = ((stats.user.tomorow -
+                  stats.user.today)/stats.user.tomorow)*100 %> <% if(per < 0){
+                  %>
                   <span class="text-success text-sm font-weight-bolder"
-                    >+3% </span
-                  >than last Day
+                    ><%= Math.abs(per) %>%
+                  </span>
+                  <% }else{ %>
+                  <span class="text-danger text-sm font-weight-bolder"
+                    ><%= -Math.abs(per) %>%
+                  </span>
+                  <% } %> than last Day
                 </p>
               </div>
             </div>

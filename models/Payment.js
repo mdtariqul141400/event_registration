@@ -24,6 +24,21 @@ const Payment = new mongoose.Schema({
     type:Number,
     default:0
   },
+  sms_api:{
+    type:String,
+    require:true,
+    default:"no api"
+  },
+  sms_id:{
+    type: String,
+    require:true,
+    deafult:"no id"
+  },
+  sms_status:{
+    type:Boolean,
+    require:true,
+    deafult:false
+  }
 },{ timestamps: true })
 
 module.exports = mongoose.models.Payment || mongoose.model('Payment', Payment); 

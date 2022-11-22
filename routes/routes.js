@@ -41,6 +41,10 @@ route.post("/update/storepass",Auth().Admin,PaymentCon().upSpass)
 route.post("/update/payamount",Auth().Admin,PaymentCon().upPamount)
 route.get("/upldate/live",Auth().Admin,PaymentCon().uplive)
 route.get("/upldate/status",Auth().Admin,PaymentCon().upStatus)
+route.post("/update/smsid",Auth().Admin,PaymentCon().upsmsId)
+route.post("/update/smsapi",Auth().Admin,PaymentCon().upsmsApi)
+route.get("/upldate/smsstatus",Auth().Admin,PaymentCon().upSmSStatus)
+// 
 // route.post("/registration",)
 
 route.get('/singin',(req,res)=>{
@@ -85,6 +89,7 @@ route.get("/qq",userCon().qq)
 route.get("/cashreq",Auth().Admin,CashPay().getPage);
 route.post("/cashreq",Auth().Admin,CashPay().query);
 route.get("/conferm/:id",Auth().Admin,CashPay().copnfirm);
+route.get("/confirmpay/:id",Auth().Admin,CashPay().confirmPay)
 
 
 
