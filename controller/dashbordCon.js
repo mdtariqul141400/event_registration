@@ -22,7 +22,8 @@ const DashbordCon = ()=>{
 
                     //count status
                                     
-                    const {amount} = await Payment.findOne({}); 
+                    const respay = await Payment.findOne({}); 
+                    const amount = respay.amount || 0;
 
                     const Today_user = await User.find({createdAt:{
                         $lte : today,
