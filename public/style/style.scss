@@ -255,11 +255,19 @@ body {
             z-index: 5;
             display: flex;
             justify-content: center;
-            img {
+            .img {
               height: 170px;
               width: 170px;
-              object-fit: cover;
+              overflow: hidden;
+              position: relative;
               border-radius: 10px;
+              display: flex;
+              justify-content: center;
+              align-items: center;
+              img {
+                width: 100%;
+                object-fit: cover;
+              }
             }
           }
         }

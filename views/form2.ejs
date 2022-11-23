@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css"
+    />
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
+
+    <!-- party  -->
+    <script src="https://cdn.jsdelivr.net/npm/party-js@latest/bundle/party.min.js"></script>
+    <!-- animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.7.4/lottie.min.js"></script>
+    <!-- font awesome -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/js/fontawesome.min.js"
+      integrity="sha512-5qbIAL4qJ/FSsWfIq5Pd0qbqoZpk5NcUVeAAREV2Li4EKzyJDEGlADHhHOSSCw0tHP7z3Q4hNHJXa81P92borQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+      integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- font awesome -->
+    <link rel="stylesheet" href="/style/form2.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <div class="logo">
+          <a class="party" href="/">
+            <img src="/upload/art/1669121319891-logo.png" alt="" />
+          </a>
+        </div>
+        <div class="nav">
+          <ol>
+            <li class="party"><a href="/userLogin">login</a></li>
+            <li class="party"><a href="#form">registration</a></li>
+          </ol>
+        </div>
+      </nav>
+      <section class="hero">
+        <div class="text">
+          <div class="elogo">
+            <img src="/upload/art/1669121374234-eventArt.png" alt="" />
+          </div>
+          <h1>WOW perty</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora est
+            iure, modi consectetur doloremque error nam asperiores officiis
+            porro, ratione illo, itaque veniam saepe quas a animi nihil
+            voluptatibus vel.
+          </p>
+          <a class="party" href="#form">registration Now</a>
+        </div>
+        <div class="animCon">
+          <div class="anim">
+            <div id="icon-container"></div>
+          </div>
+        </div>
+      </section>
+    </header>
+    <section class="date">
+      <div class="d">
+        <h1>Event Date</h1>
+        <h2>2 nov 2022 fryday</h2>
+      </div>
+      <div class="c"></div>
+    </section>
+    <section class="offer">
+      <div class="con">
+        <div class="main">
+          <div class="text">
+            <div class="h">
+              <h1>This Is our event for all studen and famely</h1>
+            </div>
+            <div class="off">
+              for all facelyty we are fixd a registration fees for all
+              pertycipents
+            </div>
+            <button class="party">Registration for only 1200 Tk</button>
+          </div>
+          <div class="animation">
+            <div id="icon-container2"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="form">
+      <form action="/registration" method="post" enctype="multipart/form-data">
+        <div class="con">
+          <div id="form" class="head"><h1>registration Form</h1></div>
+          <div class="imgInp">
+            <div class="imgPC">
+              <img id="userimg" src="" alt="" />
+            </div>
+            <button id="uploadphotoimg">
+              <span><i class="fa fa-upload" aria-hidden="true"></i></span>
+              Upload Photo
+            </button>
+            <input type="file" name="photo" id="userPhoto" hidden />
+          </div>
+          <div class="inputsec">
+            <div class="inpg">
+              <label for="name"
+                ><span> <i class="fa-solid fa-user"></i> </span>Full
+                name:</label
+              >
+              <input
+                type="text"
+                name="name"
+                required
+                placeholder="ex:md. nahid"
+              />
+            </div>
+            <div class="inpg">
+              <label for="name"
+                ><span><i class="fa-solid fa-phone"></i> </span>Phone:</label
+              >
+              <input
+                type="text"
+                name="phone"
+                required
+                placeholder="ex:md. nahid"
+              />
+            </div>
+            <div class="inpg">
+              <label for="name"
+                ><span><i class="fa-solid fa-venus-mars"></i> </span
+                >Gender:</label
+              >
+              <select name="address" required>
+                <option value="">chouse</option>
+                <option value="M">male</option>
+                <option value="F">female</option>
+                <option value="O">Other</option>
+              </select>
+            </div>
+            <div class="inpg">
+              <label for="name"
+                ><span><i class="fa-solid fa-shirt"></i> </span>T-shirt:</label
+              >
+              <select name="Tshirt" required>
+                <option value="">chouse</option>
+                <option value="XXL">XXL</option>
+                <option value="XL">XL</option>
+                <option value="X">X</option>
+                <option value="M">M</option>
+                <option value="S">S</option>
+                <option value="XS">XS</option>
+              </select>
+            </div>
+            <div class="inpg">
+              <label for="name"
+                ><span><i class="fa-solid fa-droplet"></i> </span>Blood
+                Group:</label
+              >
+              <select name="BG" required>
+                <option value="">chouse</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </div>
+            <div class="inpg">
+              <label for="regfor"
+                ><span><i class="fa-solid fa-handshake-angle"></i> </span
+                >Registration For:</label
+              >
+              <select name="regfor" id="">
+                <option value="Self">Self</option>
+                <option value="for Friends">for Friends</option>
+              </select>
+            </div>
+            <div class="inpg">
+              <label for="pay"
+                ><span><i class="fa-solid fa-handshake-angle"></i> </span
+                >Payment:</label
+              >
+              <select name="pay" id="">
+                <option value="Cash">Cash</option>
+                <option value="Online">Online</option>
+                <option value="un">Pay Leater</option>
+              </select>
+            </div>
+            <div class="subbtn">
+              <button type="submit">submit</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </section>
+
+    <script>
+      let buttonparty = document.querySelectorAll(".party");
+
+      buttonparty.forEach((e) => {
+        e.addEventListener("mouseover", function (e) {
+          party.confetti(this, {
+            count: party.variation.range(20, 10),
+          });
+        });
+      });
+
+      // animation init
+      var animation = bodymovin.loadAnimation({
+        // animationData: { /* ... */ },
+        container: document.getElementById("icon-container"), // required
+        path: "/upload/animation/party.json", // required
+        renderer: "svg", // required
+        loop: true, // optional
+        autoplay: true, // optional
+        name: "Demo Animation", // optional
+      });
+      var animation2 = bodymovin.loadAnimation({
+        // animationData: { /* ... */ },
+        container: document.getElementById("icon-container2"), // required
+        path: "/upload/animation/party.json", // required
+        renderer: "svg", // required
+        loop: true, // optional
+        autoplay: true, // optional
+        name: "Demo Animation", // optional
+      });
+
+      // img upload section
+      let uploadBtn = document.querySelector("#uploadphotoimg");
+      let inputimg = document.querySelector("#userPhoto");
+      let userimg = document.querySelector("#userimg");
+      uploadBtn.addEventListener("click", (e) => {
+        e.preventDefault();
+        inputimg.click();
+      });
+      inputimg.addEventListener("change", (e) => {
+        userimg.src = URL.createObjectURL(e.target.files[0]);
+      });
+    </script>
+  </body>
+</html>

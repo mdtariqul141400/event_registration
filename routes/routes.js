@@ -27,7 +27,7 @@ const CashPay = require("../controller/cashPay")
 
 const route = require('express').Router();
 route.get('/',(req,res)=>{
-    res.render("form")
+    res.render("form2")
 });
 //profile 
 route.get("/profile",Auth().user,(req,res)=>{

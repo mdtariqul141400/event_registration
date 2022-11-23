@@ -233,12 +233,20 @@ body .main .con button {
   display: flex;
   justify-content: center;
 }
-.main-card .print_con .print-document .info .user_img .uimg img {
+.main-card .print_con .print-document .info .user_img .uimg .img {
   height: 170px;
   width: 170px;
+  overflow: hidden;
+  position: relative;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.main-card .print_con .print-document .info .user_img .uimg .img img {
+  width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
-  border-radius: 10px;
 }
 .main-card .print_con .print-document .info .name {
   width: 100%;
