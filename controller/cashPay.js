@@ -71,7 +71,45 @@ const CashPay = ()=>{
                 console.log(error);
                 res.send(error);
             }
-        }
+        },
+        ALLgetPage : async (req,res)=>{
+            try {
+                const page =req.query.p || 0;
+                let docPP = 10;
+                // db.collection.find({}).skip(perPage * page).limit(perPage)
+                const cou = await User.find({})
+                const AllData = await User.find({}).skip(docPP * page).limit(docPP);
+                
+                res.render("alluser",{
+                    data:AllData,
+                    c:cou
+                })
+            } catch (error) {
+                console.log(error);
+                res.send(error)
+            }
+        },
+        allquery: async (req,res)=>{
+            try{
+                const {query} = req.body;
+                
+                if(+query){
+                    const qdata = await User.find({regNo:+query});
+                    return res.render("alluser",{
+                        data:qdata,
+                    })
+                }
+                const regX = new RegExp(query,"i")
+                        
+                const qdata = await User.find({name:regX});
+                return res.render("alluser",{
+                    data:qdata,
+                })
+
+            }catch(error){
+console.log(error)
+            }
+        },
     }
 }
 

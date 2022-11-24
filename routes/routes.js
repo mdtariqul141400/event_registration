@@ -19,16 +19,15 @@ const Event = require("../controller/EventInfoCon")
 
 // cash payment 
 const CashPay = require("../controller/cashPay")
-
-
+//
+// form con 
+const Form = require("../controller/regFromCon")
 
 
 // routing start heare ------>
 
 const route = require('express').Router();
-route.get('/',(req,res)=>{
-    res.render("form2")
-});
+route.get('/',Form().getpage);
 //profile 
 route.get("/profile",Auth().user,(req,res)=>{
     res.render("user",{user:req.user})
@@ -56,6 +55,7 @@ route.get('/dashboard',Auth().Admin,DashbordCon().get);
 route.post("/registration",userCon().upload.single("photo"),userCon().add,PaymentCon().gopayment)
 //userlogin 
 route.get("/userLogin",UserLoginCon().getpage);
+route.get("/userlogout",UserLoginCon().logout);
 route.post("/userlogin",UserLoginCon().postNum);
 
 route.post("/votp",UserLoginCon().votp);
@@ -90,6 +90,8 @@ route.get("/cashreq",Auth().Admin,CashPay().getPage);
 route.post("/cashreq",Auth().Admin,CashPay().query);
 route.get("/conferm/:id",Auth().Admin,CashPay().copnfirm);
 route.get("/confirmpay/:id",Auth().Admin,CashPay().confirmPay)
+route.get("/users",Auth().Admin,CashPay().ALLgetPage);
+route.post("/users",Auth().Admin,CashPay().allquery);
 
 
 

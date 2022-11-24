@@ -14,7 +14,7 @@ var storage = multer.diskStorage({
     }
   });
   
-
+ 
 const userCon = ()=>{
     return {
         qq:async (req,res)=>{
@@ -55,10 +55,9 @@ const userCon = ()=>{
             }
 
             const chEntry = await User.findOne({phone:data.phone});
-            console.log(chEntry)
             if(chEntry){
                 if(chEntry.Payment.status){
-                    return res.redirect("userLogin")
+                    return res.redirect("/profile")
                 }else{
                     req.user= chEntry;
                     return next();
@@ -101,13 +100,14 @@ const userCon = ()=>{
         upload: multer({  
             storage: storage,
             limits:{
-             fileSize: 3145728 // 3MB 
+             fileSize: 6145728 // 5MB 
             }
         }),
         sucsses:async (req,res)=>{
             try{
                 const paydata = req.body;
-            
+                // comprasse size use sharp packedg
+                // https://www.itsolutionstuff.com/post/node-js-resize-image-before-upload-using-multer-sharpexample.html
                 const update = {
                     status:true,
                     name:"online",
@@ -115,7 +115,7 @@ const userCon = ()=>{
                 }
                 const resdb = await User.findOneAndUpdate({regNo:paydata.tran_id},{Payment:update});
                 
-                res.redirect("/")
+                res.redirect("/userLogin")
             }catch(e){
                 console.log(e);
                 res.send(e)

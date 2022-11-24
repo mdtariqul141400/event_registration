@@ -119,6 +119,7 @@ body {
 //card download
 .main-card {
   width: 100%;
+  min-width: 580px;
   min-height: 100vh;
   display: flex;
   position: relative;
@@ -140,7 +141,7 @@ body {
     padding: 20px;
     z-index: 10;
     button {
-      font-size: 30px;
+      font-size: 20px;
       font-weight: 600;
       padding: 15px 30px;
       background: white;
@@ -149,6 +150,7 @@ body {
       cursor: pointer;
       box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.342);
       transition: all 0.4s;
+      margin: 10px;
       &:hover {
         background-color: lightgreen;
         color: #fff;
