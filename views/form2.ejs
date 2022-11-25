@@ -31,14 +31,14 @@
     />
     <!-- font awesome -->
     <link rel="stylesheet" href="/style/form2.css" />
-    <title>Document</title>
+    <title><%= data.name %></title>
   </head>
   <body>
     <header>
       <nav>
         <div class="logo">
           <a class="party" href="/">
-            <img src="/upload/art/1669121319891-logo.png" alt="" />
+            <img src="/upload/art/<%= art.logo %>" alt="" />
           </a>
         </div>
         <div class="nav">
@@ -51,15 +51,15 @@
       <section class="hero">
         <div class="text">
           <div class="elogo">
-            <img src="/upload/art/1669121374234-eventArt.png" alt="" />
+            <img src="/upload/art/<%= art.eventArt %>" alt="" />
           </div>
-          <h1>WOW perty</h1>
-          <p>
+          <h1><%= data.name %></h1>
+          <!-- <p>
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Tempora est
             iure, modi consectetur doloremque error nam asperiores officiis
             porro, ratione illo, itaque veniam saepe quas a animi nihil
             voluptatibus vel.
-          </p>
+          </p> -->
           <a class="party" href="#form">registration Now</a>
         </div>
         <div class="animCon">
@@ -72,7 +72,7 @@
     <section class="date">
       <div class="d">
         <h1>Event Date</h1>
-        <h2>2 nov 2022 fryday</h2>
+        <h2><%= new Date(data.date).toDateString() %></h2>
       </div>
       <div class="c"></div>
     </section>
@@ -81,13 +81,14 @@
         <div class="main">
           <div class="text">
             <div class="h">
-              <h1>This Is our event for all studen and famely</h1>
+              <h1>সকল শিক্ষার্থী ও আত্মীয়-স্বজনদের আমন্ত্রণ জানানো হয়েছে</h1>
             </div>
             <div class="off">
-              for all facelyty we are fixd a registration fees for all
-              pertycipents
+              সেরা অনুষ্ঠানের আয়োজন করতে অনেক পরিশ্রম ও আর্থিক সহায়তা
+              প্রয়োজন। তাই আমরা প্রত্যেকের জন্য একটি ফি নির্ধারণ করি। ফি <%=
+              pay %> টাকা
             </div>
-            <button class="party">Registration for only 1200 Tk</button>
+            <button class="party">Registration for only <%=pay %> Tk</button>
           </div>
           <div class="animation">
             <div id="icon-container2"></div>
@@ -98,7 +99,16 @@
     <section class="form">
       <form action="/registration" method="post" enctype="multipart/form-data">
         <div class="con">
+          <div class="animf">
+            <div class="animd"></div>
+          </div>
           <div id="form" class="head"><h1>registration Form</h1></div>
+          <div class="warn">
+            <p>
+              please fill the form correctly.Don't submit any wrong
+              informition.Otherwise your registration will be cancelled
+            </p>
+          </div>
           <div class="imgInp">
             <div class="imgPC">
               <img id="userimg" src="" alt="" />
@@ -130,8 +140,9 @@
                 type="text"
                 name="phone"
                 required
-                placeholder="ex:md. nahid"
+                placeholder="ex:md. 01712345678"
               />
+              <div class="warn"><p>Please input the number carefully</p></div>
             </div>
             <div class="inpg">
               <label for="name"
@@ -194,7 +205,6 @@
               <select name="pay" id="">
                 <option value="Cash">Cash</option>
                 <option value="Online">Online</option>
-                <option value="un">Pay Leater</option>
               </select>
             </div>
             <div class="subbtn">
@@ -204,6 +214,17 @@
         </div>
       </form>
     </section>
+    <footer>
+      <div class="fanim">
+        <div class="fac"></div>
+      </div>
+      <h1>
+        develop by <a href="https://ddcom.com.bd/">DDCOM</a>,<a
+          href="https://dewanict.com/"
+          >Dewan group</a
+        >
+      </h1>
+    </footer>
 
     <script>
       let buttonparty = document.querySelectorAll(".party");
@@ -229,7 +250,25 @@
       var animation2 = bodymovin.loadAnimation({
         // animationData: { /* ... */ },
         container: document.getElementById("icon-container2"), // required
-        path: "/upload/animation/party.json", // required
+        path: "/animation/work.json", // required
+        renderer: "svg", // required
+        loop: true, // optional
+        autoplay: true, // optional
+        name: "Demo Animation", // optional
+      });
+      var animation3 = bodymovin.loadAnimation({
+        // animationData: { /* ... */ },
+        container: document.querySelector(".animd"), // required
+        path: "/animation/rain.json", // required
+        renderer: "svg", // required
+        loop: true, // optional
+        autoplay: true, // optional
+        name: "Demo Animation", // optional
+      });
+      var animation4 = bodymovin.loadAnimation({
+        // animationData: { /* ... */ },
+        container: document.querySelector(".fac"), // required
+        path: "/animation/spaceman.json", // required
         renderer: "svg", // required
         loop: true, // optional
         autoplay: true, // optional

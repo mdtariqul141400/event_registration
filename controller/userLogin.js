@@ -40,7 +40,7 @@ const UserLoginCon = ()=>{
                 const {phone,otp} = req.body;
                 const resdb = await OTP.findOne({Phone:phone});
                 if(!resdb){
-                    return res.redirect("/ulogin")
+                    return res.redirect("/userLogin")
                 }
                 if(resdb.OTP === otp){
                     const userdb = await User.findOne({phone:phone});
@@ -50,12 +50,17 @@ const UserLoginCon = ()=>{
                     res.cookie("step",rand);
                     res.redirect('/profile');
                 }else{
-                    return res.redirect("/ulogin")
+                    return res.redirect("/userLogin")
                 }
             }catch(error){
                 console.log(error);
                 res.send(error);
             }
+        },
+        logout:  (req,res)=>{
+            res.cookie("temp","");
+            res.cookie("step","");
+            res.redirect('/userLogin');
         }
     }
 }

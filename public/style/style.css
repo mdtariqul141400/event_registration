@@ -100,6 +100,7 @@ body .main .con button {
 
 .main-card {
   width: 100%;
+  min-width: 580px;
   min-height: 100vh;
   display: flex;
   position: relative;
@@ -115,7 +116,7 @@ body .main .con button {
   z-index: 10;
 }
 .main-card .head button {
-  font-size: 30px;
+  font-size: 20px;
   font-weight: 600;
   padding: 15px 30px;
   background: white;
@@ -124,6 +125,7 @@ body .main .con button {
   cursor: pointer;
   box-shadow: 5px 5px 10px rgba(255, 255, 255, 0.342);
   transition: all 0.4s;
+  margin: 10px;
 }
 .main-card .head button:hover {
   background-color: lightgreen;

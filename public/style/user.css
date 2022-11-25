@@ -17,6 +17,30 @@ body {
   font-family: "Baloo 2", cursive;
 }
 
+nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: #ff4545;
+  text-align: left;
+  display: flex;
+  justify-content: right;
+}
+nav ol {
+  padding: 5px 20px;
+}
+nav ol li {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  list-style: none;
+}
+nav ol li a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .box {
   position: relative;
   width: 380px;
