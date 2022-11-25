@@ -8,20 +8,22 @@ const form = ()=>{
                 const Paydata = await Payment.findOne();
                 const ARTd = await ART.findOne();
                 const Datad = await Data.findOne();
+
+
                 console.log({
-                    pay:Paydata.amount,
+                    pay: Paydata? Paydata.amount || 0 : 0,
                    art: ARTd,
                    data: {
-                    name: Datad.name,
-                    date:Datad.date
+                    name: Datad? Datad.name || "" :"",
+                    date:Datad? Datad.date || "" :""
                    }
                 })
                 res.render("form2",{
-                    pay:Paydata.amount,
-                   art: ARTd,
+                    pay:Paydata? Paydata.amount || "": "",
+                   art: ARTd || "",
                    data: {
-                    name: Datad.name,
-                    date:Datad.date
+                    name:Datad? Datad.name || "" : "",
+                    date:Datad? Datad.date || "" : ""
                    }
                 })
             } catch (error) {

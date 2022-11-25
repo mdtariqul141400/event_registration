@@ -1,3 +1,6 @@
+// active for user
+const Active = require("../middleware/Active")
+
 // auth mid
 const Auth = require("../middleware/Auth")
 //
@@ -27,14 +30,18 @@ const Form = require("../controller/regFromCon")
 // routing start heare ------>
 
 const route = require('express').Router();
-route.get('/',Form().getpage);
+route.get('/',Active().status,Form().getpage);
 //profile 
-route.get("/profile",Auth().user,(req,res)=>{
+route.get("/profile",Active().status,Auth().user,(req,res)=>{
     res.render("user",{user:req.user})
 })
+route.get("/update-user",Active().status,Auth().user,(req,res)=>{
+    res.render("update_user.ejs",{user:req.user})
+})
+route.post("/updateuser",Active().status,Auth().user,userCon().updateUser)
 
 //payment getway setup
-route.get("/paycon",PaymentCon().getPage)
+route.get("/paycon",Active().status,PaymentCon().getPage)
 route.post("/update/storeid",Auth().Admin,PaymentCon().upSid)
 route.post("/update/storepass",Auth().Admin,PaymentCon().upSpass)
 route.post("/update/payamount",Auth().Admin,PaymentCon().upPamount)
@@ -52,20 +59,22 @@ route.get('/singin',(req,res)=>{
 route.get('/setting',Auth().Admin,ArtCon().getpage)
 
 route.get('/dashboard',Auth().Admin,DashbordCon().get);
-route.post("/registration",userCon().upload.single("photo"),userCon().add,PaymentCon().gopayment)
+route.post("/registration",Active().status,userCon().upload.single("photo"),userCon().add,PaymentCon().gopayment)
 //userlogin 
-route.get("/userLogin",UserLoginCon().getpage);
-route.get("/userlogout",UserLoginCon().logout);
-route.post("/userlogin",UserLoginCon().postNum);
+route.get("/userLogin",Active().status,UserLoginCon().getpage);
+route.get("/userlogout",Active().status,UserLoginCon().logout);
+route.post("/userlogin",Active().status,UserLoginCon().postNum);
 
-route.post("/votp",UserLoginCon().votp);
+route.post("/votp",Active().status,UserLoginCon().votp);
 
-route.get("/otp",(req,res)=>{
+route.get("/otp",Active().status,(req,res)=>{
     res.render("otp")
 })
 // card 
-route.get("/card/:id",Auth().user,CardCon().getcard);
-route.post("/success",userCon().sucsses);
+route.get("/card/:id",Active().status,Auth().user,CardCon().getcard);
+route.post("/success",Active().status,userCon().sucsses);
+route.post("/fail",Active().status,userCon().fail);
+route.post("/paycancel",Active().status,userCon().paycancel);
 //art controler
 route.post("/uploadlogo",Auth().Admin,ArtCon().upload.single("logo"),ArtCon().uploadLogo);
 route.post("/uploadSill",Auth().Admin,ArtCon().upload.single("logo"),ArtCon().uploadSill);

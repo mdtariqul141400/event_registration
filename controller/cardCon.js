@@ -11,7 +11,6 @@ const cardCon = ()=>{
             const regnom = req.params.id;
             const user = req.user;
             if(user.regNo != regnom){
-                console.log(user);
                 return res.redirect("/userLogin")
             }
             // host
@@ -31,9 +30,9 @@ const cardCon = ()=>{
                                     currency: 'BDT',
                                     tran_id: datadb.regNo, // use unique tran_id for each api call
                                     success_url: "http://"+req.headers.host+'/success',
-                                    fail_url: req.headers.host+'/fail',
-                                    cancel_url: req.headers.host+'/ss',
-                                    ipn_url:req.headers.host+'/ipn',
+                                    fail_url: "http://"+req.headers.host+'/fail',
+                                    cancel_url: "http://"+req.headers.host+'/paycancel',
+                                    ipn_url:"http://"+req.headers.host+'/ipn',
                                     shipping_method: 'Online',
                                     product_name: 'Event_Packg.',
                                     product_category: 'Service',
@@ -55,6 +54,7 @@ const cardCon = ()=>{
                                     ship_state: 'Dhaka',
                                     ship_postcode: 1000,
                                     ship_country: 'Bangladesh',
+                                    value_a: user.regNo,
                                 };
                                 const sslcz = new SSLCommerzPayment(paydb.ID,paydb.pass, paydb.live);
                                 sslcz.init(data).then(apiResponse => {
