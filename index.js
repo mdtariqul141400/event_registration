@@ -10,17 +10,17 @@ const Emitter = require('events');
 const multer = require("multer");
 
 // database connection 
-mongoose.connect("mongodb://127.0.0.1:27017/event", { useUnifiedTopology: true, useNewUrlParser: true }).then((result) => {
-    console.log('db connected');
-}).catch((err) => {
-    console.log(err)
-});
-
-// mongoose.connect("mongodb+srv://dewanict:dewanict2022@cluster0.tp6asco.mongodb.net/event?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true }).then((result) => {
+// mongoose.connect("mongodb://127.0.0.1:27017/event", { useUnifiedTopology: true, useNewUrlParser: true }).then((result) => {
 //     console.log('db connected');
 // }).catch((err) => {
 //     console.log(err)
 // });
+
+mongoose.connect("mongodb+srv://dewanict:dewanict2022@cluster0.tp6asco.mongodb.net/event?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true }).then((result) => {
+    console.log('db connected');
+}).catch((err) => {
+    console.log(err)
+});
 
 // Assets
 app.use(express.static('public'));
