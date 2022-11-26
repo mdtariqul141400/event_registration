@@ -23,114 +23,106 @@
     <link rel="stylesheet" href="/style/user.css" />
   </head>
   <body class="update">
-    <nav>
-      <ol>
-        <li>
-          <a href="/userlogout">Logout</a>
-        </li>
-      </ol>
-    </nav>
     <div class="box">
-      <form action="/updateuser" method="post">
-        <div class="form">
-          <div class="udes">
-            <div class="img">
-              <img src="/upload/userimg/<%= user.photo %>" alt="" />
-            </div>
-            <div class="name">
-              <input type="text" name="name" value="<%= user.name%>" />
-
-              <h3>
-                <span>Phone:</span>
-                <%= user.phone %>
-              </h3>
-              <h3>
-                <span>Blood Group:</span>
-                <select name="BG" value="<%= user.BG%>">
-                  <option value="">chouse</option>
-                  <option value="A+">A+</option>
-                  <option value="A-">A-</option>
-                  <option value="AB+">AB+</option>
-                  <option value="AB-">AB-</option>
-                  <option value="B+">B+</option>
-                  <option value="B-">B-</option>
-                  <option value="O+">O+</option>
-                  <option value="O-">O-</option>
-                </select>
-              </h3>
-            </div>
+      <div class="form">
+        <div class="udes">
+          <div class="img">
+            <img src="/upload/userimg/<%= user.photo %>" alt="" />
           </div>
-          <div class="act">
-            <span class="reg">RegNum: <%= user.regNo %></span>
-            <div class="tab">
-              <table>
-                <tr>
-                  <td>gender</td>
-                  <td>
-                    :
-                    <select name="address" value="<%= user.address %>">
-                      <option value="<%= user.address %>">
-                        <%= user.address %>
-                      </option>
-                      <option value="M">male</option>
-                      <option value="F">female</option>
-                      <option value="O">Other</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td>T-shirt</td>
-                  <td>
-                    :
-                    <select name="Tshirt" value="<%= user.dress%>">
-                      <option value="<%= user.dress%>"><%= user.dress%></option>
-                      <option value="XXL">XXL</option>
-                      <option value="XL">XL</option>
-                      <option value="X">X</option>
-                      <option value="M">M</option>
-                      <option value="S">S</option>
-                      <option value="XS">XS</option>
-                    </select>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Registration Type</td>
-                  <td>
-                    :
-                    <select name="regfor" value="<%= user.regfor %>">
-                      <option value="<%= user.regfor %>">
-                        <%= user.regfor %>
-                      </option>
-                      <option value="Self">Self</option>
-                      <option value="for Friends">for Friends</option>
-                    </select>
-                  </td>
-                </tr>
-              </table>
+          <div class="name">
+            <input type="text" name="name" value="<%= user.name%>" />
+
+            <h3>
+              <span>Phone:</span>
+              <%= user.phone %>
+            </h3>
+            <h3>
+              <span>Blood Group:</span>
+              <select name="BG" value="<%= user.BG%>">
+                <option value="">chouse</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+              </select>
+            </h3>
+          </div>
+        </div>
+        <div class="act">
+          <span class="reg">RegNum: <%= user.regNo %></span>
+          <div class="tab">
+            <table>
+              <tr>
+                <td>gender</td>
+                <td>
+                  :
+                  <select name="address" value="<%= user.address %>">
+                    <option value="<%= user.address %>">
+                      <%= user.address %>
+                    </option>
+                    <option value="M">male</option>
+                    <option value="F">female</option>
+                    <option value="O">Other</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>T-shirt</td>
+                <td>
+                  :
+                  <select name="Tshirt" value="<%= user.dress%>">
+                    <option value="<%= user.dress%>"><%= user.dress%></option>
+                    <option value="XXL">XXL</option>
+                    <option value="XL">XL</option>
+                    <option value="X">X</option>
+                    <option value="M">M</option>
+                    <option value="S">S</option>
+                    <option value="XS">XS</option>
+                  </select>
+                </td>
+              </tr>
+              <tr>
+                <td>Registration Type</td>
+                <td>
+                  :
+                  <select name="regfor" value="<%= user.regfor %>">
+                    <option value="<%= user.regfor %>">
+                      <%= user.regfor %>
+                    </option>
+                    <option value="Self">Self</option>
+                    <option value="for Friends">for Friends</option>
+                  </select>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div class="pay">
+            <% if(user.Payment.status){%>
+            <div style="background: #83ff3b" class="b">
+              <h1><span>Paymen Status</span> :Paid</h1>
             </div>
-            <div class="pay">
-              <% if(user.Payment.status){%>
-              <div style="background: #83ff3b" class="b">
-                <h1><span>Paymen Status</span> :Paid</h1>
-              </div>
-              <% }else if(user.Payment.name === "cash"){%>
-              <div style="background: #3bf2ff" class="b">
-                <h1><span>Paymen Status</span> :Painding</h1>
-              </div>
-              <%}else{%>
-              <div style="background: #be0000" class="b">
-                <h1><span>Paymen Status</span> :UnPaid</h1>
-              </div>
-              <% }%>
+            <% }else if(user.Payment.name === "cash"){%>
+            <div style="background: #3bf2ff" class="b">
+              <h1><span>Paymen Status</span> :pending</h1>
             </div>
-            <div class="btn">
-              <div class="b">
-                <button type="submit">update</button>
-              </div>
+            <%}else{%>
+            <div style="background: #be0000" class="b">
+              <h1><span>Paymen Status</span> :UnPaid</h1>
+            </div>
+            <% }%>
+          </div>
+          <div class="btn">
+            <div class="b">
+              <a href="#">conferm pay</a>
+              <a href="/user/delete/<%= user._id %>">Delete</a>
             </div>
           </div>
         </div>
-      </form>
+      </div>
     </div>
   </body>
 </html>

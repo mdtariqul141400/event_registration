@@ -104,6 +104,7 @@ route.post("/users",Auth().Admin,CashPay().allquery);
 
 // adminn  user con 
 route.get("/acon/:regNo",Auth().Admin,userCon().admin_con_get)
+route.get("/user/delete/:id",Auth().Admin,userCon().admin_con_get_delete)
 
 
 // user app route 

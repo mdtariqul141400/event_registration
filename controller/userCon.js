@@ -217,6 +217,13 @@ const userCon = () => {
         console.log(error);
         res.send(error) 
       }
+    },
+    admin_con_get_delete : async (req,res)=>{
+      try {
+        
+      } catch (error) {
+        
+      }
     }
   };
 };
