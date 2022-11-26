@@ -16,6 +16,12 @@ mongoose.connect("mongodb://127.0.0.1:27017/event", { useUnifiedTopology: true, 
     console.log(err)
 });
 
+// mongoose.connect("mongodb+srv://dewanict:dewanict2022@cluster0.tp6asco.mongodb.net/event?retryWrites=true&w=majority", { useUnifiedTopology: true, useNewUrlParser: true }).then((result) => {
+//     console.log('db connected');
+// }).catch((err) => {
+//     console.log(err)
+// });
+
 // Assets
 app.use(express.static('public'));
 app.use(express.urlencoded({ extended: false }));
