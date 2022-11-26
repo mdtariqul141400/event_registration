@@ -161,7 +161,7 @@ const PaymentCon = () => {
           console.log(apiResponse);
           let GatewayPageURL = apiResponse.GatewayPageURL;
           console.log("Redirecting to: ", GatewayPageURL);
-          res.redirect(GatewayPageURL);
+          // res.redirect(GatewayPageURL);
         });
       } catch (error) {
         console.log(error);

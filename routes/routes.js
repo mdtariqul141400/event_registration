@@ -104,4 +104,20 @@ route.post("/users",Auth().Admin,CashPay().allquery);
 
 
 
+// user app route 
+
+// route.post("/app_registration",(req,res)=>{
+//     res.send({
+//         data:"ok"
+//     })
+// })
+
+
+// user login by app
+
+// v otp app
+
+// card by query str
+
+
 module.exports = route;
