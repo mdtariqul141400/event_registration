@@ -102,6 +102,8 @@ route.get("/confirmpay/:id",Auth().Admin,CashPay().confirmPay)
 route.get("/users",Auth().Admin,CashPay().ALLgetPage);
 route.post("/users",Auth().Admin,CashPay().allquery);
 
+// adminn  user con 
+route.get("/acon/:regNo",Auth().Admin,userCon().admin_con_get)
 
 
 // user app route 

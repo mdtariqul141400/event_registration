@@ -41,6 +41,28 @@ nav ol li a {
   color: #fff;
 }
 
+.updatecon {
+  position: absolute;
+
+  top: 10px;
+  right: 10px;
+  z-index: 10;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2px;
+  background-color: #ff4545;
+  border-radius: 50%;
+}
+.updatecon a {
+  font-size: 80%;
+  color: #dcdcdc;
+}
+.updatecon a:hover {
+  color: #fff;
+}
 .box {
   position: relative;
   width: 380px;
@@ -60,7 +82,7 @@ nav ol li a {
   height: 420px;
   background: linear-gradient(0deg, transparent, #ff4545, #ff4545);
   -webkit-animation: Tariqul 4s linear infinite;
-          animation: Tariqul 4s linear infinite;
+  animation: Tariqul 4s linear infinite;
   transform-origin: bottom right;
 }
 
@@ -73,7 +95,7 @@ nav ol li a {
   height: 420px;
   background: linear-gradient(0deg, transparent, #ff4545, #ff4545);
   -webkit-animation: Tariqul 6s linear infinite;
-          animation: Tariqul 6s linear infinite;
+  animation: Tariqul 6s linear infinite;
   transform-origin: bottom right;
 }
 
@@ -86,10 +108,10 @@ nav ol li a {
   height: 420px;
   background: linear-gradient(0deg, transparent, #ff4545, #ff4545);
   -webkit-animation: Tariqul 6s linear infinite;
-          animation: Tariqul 6s linear infinite;
+  animation: Tariqul 6s linear infinite;
   transform-origin: bottom right;
   -webkit-animation-delay: 3s;
-          animation-delay: 3s;
+  animation-delay: 3s;
 }
 
 @-webkit-keyframes Tariqul {
@@ -208,7 +230,7 @@ nav ol li a {
   color: #ff4545;
 }
 
-input[type=submit],
+input[type="submit"],
 .tr {
   text-decoration: none;
   border: none;
@@ -242,10 +264,10 @@ input[type=submit],
   width: 150px;
   height: 150px;
   -o-object-fit: cover;
-     object-fit: cover;
+  object-fit: cover;
   border-radius: 50%;
   -webkit-animation: branim 5s linear infinite;
-          animation: branim 5s linear infinite;
+  animation: branim 5s linear infinite;
 }
 .udes .name {
   width: 100%;
@@ -382,4 +404,21 @@ input[type=submit],
     border-left: 2px solid #23242a;
     border-right: 2px solid #23242a;
   }
-}/*# sourceMappingURL=user.css.map */
+}
+
+.update input,
+select {
+  padding: 3px;
+  outline: none;
+  border: 2px solid red;
+}
+
+.update button {
+  font-size: 18px;
+  padding: 7px 20px;
+  font-weight: 500;
+  color: #ff4545;
+  background-color: #ebebeb;
+  border: none;
+  border-radius: 20px;
+}

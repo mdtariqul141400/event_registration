@@ -206,6 +206,18 @@ const userCon = () => {
         res.send(error);
       }
     },
+    admin_con_get: async (req,res)=>{
+      try {
+        const regNo = req.params.regNo;
+        const data = await User.findOne({regNo});
+        res.render('adminUC',{
+          user:data
+        })
+      } catch (error) {
+        console.log(error);
+        res.send(error) 
+      }
+    }
   };
 };
 
